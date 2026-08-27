@@ -1,0 +1,200 @@
+{
+  "case": "t0_4_smallest_heatmap",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/heatmap",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "polygon_aoi": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -112.075,
+                    33.448
+                  ],
+                  [
+                    -112.0726,
+                    33.448
+                  ],
+                  [
+                    -112.0726,
+                    33.45
+                  ],
+                  [
+                    -112.075,
+                    33.45
+                  ],
+                  [
+                    -112.075,
+                    33.448
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "date_time": {
+        "start_date": "2024-07-15",
+        "start_time": "05:00",
+        "filter_type": 1
+      },
+      "granularity": 100
+    }
+  },
+  "submit_response": {
+    "status": 200,
+    "body": {
+      "error": false,
+      "status_code": 200,
+      "message": "Heatmap Submitted Successfully",
+      "data": {
+        "activity_id": "b7ceb36b-e369-47b8-8d21-757a302fc0d9"
+      }
+    }
+  },
+  "poll_responses": [
+    {
+      "elapsed_s": 6.626,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "b7ceb36b-e369-47b8-8d21-757a302fc0d9",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 10.538,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "b7ceb36b-e369-47b8-8d21-757a302fc0d9",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 13.956,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "b7ceb36b-e369-47b8-8d21-757a302fc0d9",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 17.791,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "b7ceb36b-e369-47b8-8d21-757a302fc0d9",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 21.911,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "b7ceb36b-e369-47b8-8d21-757a302fc0d9",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 26.438,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "b7ceb36b-e369-47b8-8d21-757a302fc0d9",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 30.663,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "b7ceb36b-e369-47b8-8d21-757a302fc0d9",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 36.392,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Completed",
+        "data": {
+          "activity_id": "b7ceb36b-e369-47b8-8d21-757a302fc0d9",
+          "status": "Completed",
+          "result": {
+            "map_data": {
+              "type": "FeatureCollection",
+              "features": []
+            },
+            "stats_data": {
+              "activity_id": "b7ceb36b-e369-47b8-8d21-757a302fc0d9",
+              "n_cells": 0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "timing": {
+    "submitted_at": "2026-08-23T14:10:45.943012+00:00",
+    "terminal_at": "2026-08-23T14:11:22.334991+00:00",
+    "poll_count": 8,
+    "poll_interval_s": 2.0,
+    "duration_s": 36.392,
+    "reached_terminal": true
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [
+    "Processing",
+    "Completed"
+  ],
+  "recorded_at": "2026-08-23T14:11:22.335881+00:00"
+}

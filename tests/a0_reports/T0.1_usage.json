@@ -1,0 +1,33 @@
+{
+  "attempts": [
+    {
+      "method": "POST",
+      "status": 422,
+      "body": {
+        "error": true,
+        "status_code": 422,
+        "message": "Field 'api_key' is required.",
+        "field": "api_key",
+        "detail": [
+          {
+            "type": "missing",
+            "loc": [
+              "body",
+              "api_key"
+            ],
+            "msg": "Field required",
+            "input": {}
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "status": 405,
+      "body": {
+        "detail": "Method Not Allowed"
+      }
+    }
+  ],
+  "accepted_method": null
+}

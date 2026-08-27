@@ -1,0 +1,136 @@
+{
+  "case": "t2_12_streetview_back",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/streetview",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "latitude": 33.4484,
+      "longitude": -112.074,
+      "vertical_angle": 10.0,
+      "horizontal_angle": 90.0,
+      "back_view": true
+    }
+  },
+  "submit_response": {
+    "status": 200,
+    "body": {
+      "error": false,
+      "status_code": 200,
+      "message": "Street View Segmentation Submitted Successfully",
+      "data": {
+        "activity_id": "33fe1e1e-8b54-47ed-bf14-2a8371dfd4db"
+      }
+    }
+  },
+  "poll_responses": [
+    {
+      "elapsed_s": 5.759,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "33fe1e1e-8b54-47ed-bf14-2a8371dfd4db",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 14.986,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Completed",
+        "data": {
+          "activity_id": "33fe1e1e-8b54-47ed-bf14-2a8371dfd4db",
+          "status": "Completed",
+          "result": {
+            "coordinates": {
+              "latitude": "33.4484",
+              "longitude": "-112.074"
+            },
+            "front": {
+              "original_image": "<BASE64 len=66228 head=/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkS>",
+              "segments": {
+                "ceiling": 16.45,
+                "flower": 0.6,
+                "others": 82.95
+              },
+              "image_legend": {
+                "ceiling": [
+                  45,
+                  229,
+                  198
+                ],
+                "flower": [
+                  255,
+                  192,
+                  203
+                ],
+                "others": [
+                  255,
+                  255,
+                  255
+                ]
+              },
+              "segmented_image": "<BASE64 len=460656 head=iVBORw0KGgoAAAANSUhEUgAAAoAAAAJYCAIAAAB9wsA2AAEAAElEQVR4nNz96bIk>",
+              "image_date": "2015-04-01"
+            },
+            "back": {
+              "original_image": "<BASE64 len=87340 head=/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkS>",
+              "segments": {
+                "floor": 3.07,
+                "ceiling": 33.21,
+                "others": 63.72
+              },
+              "image_legend": {
+                "floor": [
+                  229,
+                  45,
+                  206
+                ],
+                "ceiling": [
+                  45,
+                  229,
+                  198
+                ],
+                "others": [
+                  255,
+                  255,
+                  255
+                ]
+              },
+              "segmented_image": "<BASE64 len=605600 head=iVBORw0KGgoAAAANSUhEUgAAAoAAAAJYCAIAAAB9wsA2AAEAAElEQVR4nNT96ZIk>",
+              "image_date": "2015-04-01"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "timing": {
+    "submitted_at": "2026-08-23T14:55:36.892239+00:00",
+    "terminal_at": "2026-08-23T14:55:51.878342+00:00",
+    "poll_count": 2,
+    "poll_interval_s": 2.0,
+    "poll_ceiling": 45,
+    "duration_s": 14.986,
+    "reached_terminal": true
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [
+    "Processing",
+    "Completed"
+  ],
+  "recorded_at": "2026-08-23T14:55:51.878684+00:00"
+}

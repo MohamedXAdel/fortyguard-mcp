@@ -1,0 +1,175 @@
+{
+  "case": "e_coords_outside_us",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/heatmap",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "polygon_aoi": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -0.13,
+                    51.5
+                  ],
+                  [
+                    -0.115,
+                    51.5
+                  ],
+                  [
+                    -0.115,
+                    51.51
+                  ],
+                  [
+                    -0.13,
+                    51.51
+                  ],
+                  [
+                    -0.13,
+                    51.5
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "date_time": {
+        "start_date": "2024-07-15",
+        "start_time": "05:00",
+        "filter_type": 1
+      },
+      "granularity": 100
+    }
+  },
+  "submit_response": {
+    "status": 200,
+    "body": {
+      "error": false,
+      "status_code": 200,
+      "message": "Heatmap Submitted Successfully",
+      "data": {
+        "activity_id": "5d85d7ee-df37-4e0a-a4c3-363203b7bd46"
+      }
+    }
+  },
+  "poll_responses": [
+    {
+      "elapsed_s": 6.029,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "5d85d7ee-df37-4e0a-a4c3-363203b7bd46",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 9.036,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "5d85d7ee-df37-4e0a-a4c3-363203b7bd46",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 12.772,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "5d85d7ee-df37-4e0a-a4c3-363203b7bd46",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 17.211,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "5d85d7ee-df37-4e0a-a4c3-363203b7bd46",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 20.232,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "5d85d7ee-df37-4e0a-a4c3-363203b7bd46",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 24.781,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Completed",
+        "data": {
+          "activity_id": "5d85d7ee-df37-4e0a-a4c3-363203b7bd46",
+          "status": "Completed",
+          "result": {
+            "map_data": {
+              "type": "FeatureCollection",
+              "features": []
+            },
+            "stats_data": {
+              "activity_id": "5d85d7ee-df37-4e0a-a4c3-363203b7bd46",
+              "n_cells": 0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "timing": {
+    "submitted_at": "2026-08-23T14:45:01.575974+00:00",
+    "terminal_at": "2026-08-23T14:45:26.357066+00:00",
+    "poll_count": 6,
+    "poll_interval_s": 2.0,
+    "poll_ceiling": 12,
+    "duration_s": 24.781,
+    "reached_terminal": true
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [
+    "Processing",
+    "Completed"
+  ],
+  "recorded_at": "2026-08-23T14:45:26.357956+00:00"
+}

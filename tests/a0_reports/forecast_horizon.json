@@ -1,0 +1,51 @@
+{
+  "f_0821_1200": {
+    "date": "2026-08-21",
+    "time": "12:00",
+    "n_tiles": 112,
+    "status": "Completed",
+    "note": "well inside history",
+    "mean": 41.060399999999994
+  },
+  "f_0822_0400": {
+    "date": "2026-08-22",
+    "time": "04:00",
+    "n_tiles": 0,
+    "status": "Completed",
+    "note": "stated latest available",
+    "mean": null
+  },
+  "f_0822_1000": {
+    "date": "2026-08-22",
+    "time": "10:00",
+    "n_tiles": 0,
+    "status": "Completed",
+    "note": "+6h into forecast window",
+    "mean": null
+  },
+  "f_0822_1600": {
+    "date": "2026-08-22",
+    "time": "16:00",
+    "n_tiles": 0,
+    "status": "Completed",
+    "note": "+12h \u2014 forecast edge",
+    "mean": null
+  },
+  "f_0822_2200": {
+    "date": "2026-08-22",
+    "time": "22:00",
+    "n_tiles": 0,
+    "status": "Completed",
+    "note": "+18h \u2014 expected past the edge",
+    "mean": null
+  },
+  "f_0823_0400": {
+    "date": "2026-08-23",
+    "time": "04:00",
+    "n_tiles": 112,
+    "status": "Completed",
+    "note": "+24h \u2014 expected empty",
+    "mean": 35.20942410714286
+  },
+  "_spend": 25320
+}

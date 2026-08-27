@@ -1,0 +1,143 @@
+{
+  "case": "d2_sourced_temperature",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/env_params",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "latitude": 33.4745,
+      "longitude": -112.0875,
+      "temperature": 29.567,
+      "date_time": {
+        "start_date": "2024-07-15",
+        "start_time": "05:00",
+        "filter_type": 1
+      }
+    }
+  },
+  "submit_response": {
+    "status": 200,
+    "body": {
+      "error": false,
+      "status_code": 200,
+      "message": "Environment Parameters Analysis Submitted Successfully",
+      "data": {
+        "activity_id": "20f6188b-f180-47d6-9ebe-3cbc9bc26051"
+      }
+    }
+  },
+  "poll_responses": [
+    {
+      "elapsed_s": 5.227,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Completed",
+        "data": {
+          "activity_id": "20f6188b-f180-47d6-9ebe-3cbc9bc26051",
+          "status": "Completed",
+          "result": {
+            "metadata": {
+              "timezone": "GMT-7",
+              "timezone_offset_hours": -7,
+              "time_range": {
+                "start": "2024-07-15T05:00:00-07:00",
+                "end": "2024-07-15T05:00:00-07:00",
+                "interval": "1h",
+                "count": 1
+              },
+              "timestamps": [
+                "2024-07-15T05:00:00-07:00"
+              ]
+            },
+            "locations": [
+              {
+                "lat": 33.4745,
+                "lon": -112.0875,
+                "elevation": 335.0,
+                "temperature": 29.567,
+                "parameters": {
+                  "heat_index_celsius": [
+                    30.4
+                  ],
+                  "apparent_temperature_celsius": [
+                    29.5
+                  ],
+                  "relative_humidity_percent": [
+                    50.3
+                  ],
+                  "precipitation_mm": [
+                    0.0
+                  ],
+                  "cloud_cover_octas": [
+                    1.0
+                  ],
+                  "wet_bulb_temperature_celsius": [
+                    21.3
+                  ],
+                  "air_quality:idx": [
+                    60.5
+                  ],
+                  "air_quality_pm2p5:idx": [
+                    60.5
+                  ],
+                  "air_quality_pm10:idx": [
+                    60.2
+                  ],
+                  "air_quality_no2:idx": [
+                    8.8
+                  ],
+                  "aqi_us_co": [
+                    1.3
+                  ],
+                  "air_quality_o3:idx": [
+                    31.2
+                  ],
+                  "air_quality_so2:idx": [
+                    1.7
+                  ],
+                  "methane_ppb": [
+                    null
+                  ],
+                  "co2_ppm": [
+                    null
+                  ]
+                },
+                "solar_irradiance": {
+                  "clear_sky": {
+                    "ghi": 0.0,
+                    "dni": 0.0,
+                    "dhi": 0.0
+                  },
+                  "description": "The above values provide insights into the solar energy available at the specific location at 2024-07-15 05:00. GHI represents the total solar energy, DNI focuses on direct sunlight, and DHI accounts for scattered and diffuse radiation."
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "timing": {
+    "submitted_at": "2026-08-24T00:13:22.345286+00:00",
+    "terminal_at": "2026-08-24T00:13:28.436626+00:00",
+    "poll_count": 1,
+    "poll_interval_s": 2.0,
+    "poll_ceiling": 150,
+    "duration_s": 5.227,
+    "reached_terminal": true
+  },
+  "credits": {
+    "before": 1747340,
+    "after": 1744440,
+    "delta": 2900
+  },
+  "observed_statuses": [
+    "Completed"
+  ],
+  "recorded_at": "2026-08-24T00:13:28.437523+00:00"
+}

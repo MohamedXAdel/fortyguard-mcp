@@ -1,0 +1,11 @@
+{
+  "activity_id": "e3d079c1-b5af-49dc-a061-d533d42d8022",
+  "status_code": 404,
+  "body": {
+    "error": true,
+    "status_code": 404,
+    "details": {
+      "message": "No activity found for the provided activity_id."
+    }
+  }
+}

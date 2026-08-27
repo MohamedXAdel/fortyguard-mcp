@@ -1,0 +1,242 @@
+{
+  "case": "e_date_before_floor",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/heatmap",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "polygon_aoi": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -112.095,
+                    33.47
+                  ],
+                  [
+                    -112.08,
+                    33.47
+                  ],
+                  [
+                    -112.08,
+                    33.479
+                  ],
+                  [
+                    -112.095,
+                    33.479
+                  ],
+                  [
+                    -112.095,
+                    33.47
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "date_time": {
+        "start_date": "2020-12-31",
+        "start_time": "05:00",
+        "filter_type": 1
+      },
+      "granularity": 100
+    }
+  },
+  "submit_response": {
+    "status": 200,
+    "body": {
+      "error": false,
+      "status_code": 200,
+      "message": "Heatmap Submitted Successfully",
+      "data": {
+        "activity_id": "a7a031d8-78d5-41ce-80cd-52e475302add"
+      }
+    }
+  },
+  "poll_responses": [
+    {
+      "elapsed_s": 5.651,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a7a031d8-78d5-41ce-80cd-52e475302add",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 8.994,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a7a031d8-78d5-41ce-80cd-52e475302add",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 12.677,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a7a031d8-78d5-41ce-80cd-52e475302add",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 16.941,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a7a031d8-78d5-41ce-80cd-52e475302add",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 20.544,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a7a031d8-78d5-41ce-80cd-52e475302add",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 24.049,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a7a031d8-78d5-41ce-80cd-52e475302add",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 27.649,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a7a031d8-78d5-41ce-80cd-52e475302add",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 30.544,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a7a031d8-78d5-41ce-80cd-52e475302add",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 34.628,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a7a031d8-78d5-41ce-80cd-52e475302add",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 37.574,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a7a031d8-78d5-41ce-80cd-52e475302add",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 41.021,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a7a031d8-78d5-41ce-80cd-52e475302add",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 44.396,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a7a031d8-78d5-41ce-80cd-52e475302add",
+          "status": "Processing"
+        }
+      }
+    }
+  ],
+  "timing": {
+    "submitted_at": "2026-08-23T14:44:15.495354+00:00",
+    "terminal_at": null,
+    "poll_count": 12,
+    "poll_interval_s": 2.0,
+    "poll_ceiling": 12,
+    "duration_s": 44.396,
+    "reached_terminal": false
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [
+    "Processing"
+  ],
+  "recorded_at": "2026-08-23T14:44:59.892395+00:00"
+}

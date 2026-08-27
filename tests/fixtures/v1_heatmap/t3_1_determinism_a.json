@@ -1,0 +1,174 @@
+{
+  "case": "t3_1_determinism_a",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/heatmap",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "polygon_aoi": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -112.075,
+                    33.448
+                  ],
+                  [
+                    -112.0726,
+                    33.448
+                  ],
+                  [
+                    -112.0726,
+                    33.45
+                  ],
+                  [
+                    -112.075,
+                    33.45
+                  ],
+                  [
+                    -112.075,
+                    33.448
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "date_time": {
+        "start_date": "2024-07-15",
+        "start_time": "05:00",
+        "filter_type": 1
+      },
+      "granularity": 100
+    }
+  },
+  "submit_response": {
+    "status": 200,
+    "body": {
+      "error": false,
+      "status_code": 200,
+      "message": "Heatmap Submitted Successfully",
+      "data": {
+        "activity_id": "efb6b391-260e-4bc2-a7d6-b5664100ebf0"
+      }
+    }
+  },
+  "poll_responses": [
+    {
+      "elapsed_s": 6.199,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "efb6b391-260e-4bc2-a7d6-b5664100ebf0",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 9.904,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "efb6b391-260e-4bc2-a7d6-b5664100ebf0",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 13.249,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "efb6b391-260e-4bc2-a7d6-b5664100ebf0",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 16.705,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "efb6b391-260e-4bc2-a7d6-b5664100ebf0",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 20.273,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "efb6b391-260e-4bc2-a7d6-b5664100ebf0",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 24.019,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Completed",
+        "data": {
+          "activity_id": "efb6b391-260e-4bc2-a7d6-b5664100ebf0",
+          "status": "Completed",
+          "result": {
+            "map_data": {
+              "type": "FeatureCollection",
+              "features": []
+            },
+            "stats_data": {
+              "activity_id": "efb6b391-260e-4bc2-a7d6-b5664100ebf0",
+              "n_cells": 0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "timing": {
+    "submitted_at": "2026-08-23T14:14:12.652160+00:00",
+    "terminal_at": "2026-08-23T14:14:36.671349+00:00",
+    "poll_count": 6,
+    "poll_interval_s": 2.0,
+    "duration_s": 24.019,
+    "reached_terminal": true
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [
+    "Processing",
+    "Completed"
+  ],
+  "recorded_at": "2026-08-23T14:14:36.672170+00:00"
+}

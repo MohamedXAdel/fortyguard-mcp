@@ -1,0 +1,1631 @@
+{
+  "case": "t1_3_heat_intelligence",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/heat_intelligence",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "latitude": 33.4484,
+      "longitude": -112.074,
+      "temperature": 30.2129,
+      "date": "2024-07-15",
+      "analysis": [
+        "geographic",
+        "environmental",
+        "urban",
+        "events",
+        "anthropogenic"
+      ]
+    }
+  },
+  "submit_response": {
+    "status": 200,
+    "body": {
+      "error": false,
+      "status_code": 200,
+      "message": "Heat Intelligence Submitted Successfully",
+      "data": {
+        "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b"
+      }
+    }
+  },
+  "poll_responses": [
+    {
+      "elapsed_s": 4.746,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 8.238,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 11.371,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 14.299,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 18.199,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 21.227,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 26.044,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 29.621,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 32.736,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 35.891,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 38.789,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 42.097,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 45.003,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 48.658,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 51.874,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 55.524,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 59.387,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 63.32,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 67.407,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 70.819,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 75.741,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 80.756,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 84.038,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 87.969,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 92.237,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 95.607,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 100.662,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 103.804,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 107.744,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 110.615,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 113.485,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 116.682,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 120.298,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 124.97,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 128.154,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 131.837,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 135.14,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 138.04,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 140.917,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 143.805,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 147.127,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 150.67,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 153.525,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 156.443,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 159.653,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 163.357,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 166.3,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 169.596,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 172.663,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 176.095,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 179.145,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 183.601,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 186.638,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 189.693,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 192.644,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 196.061,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 199.132,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 202.062,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 205.469,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 208.443,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 211.374,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 214.295,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 217.213,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 220.239,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 223.104,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 227.115,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 230.074,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 233.31,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 236.239,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 239.204,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 242.751,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 245.89,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 248.861,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 251.818,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 254.961,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 259.196,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 262.129,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 265.094,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 267.981,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 271.106,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 273.998,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 277.199,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 280.475,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 283.382,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 286.519,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 289.668,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 292.691,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 296.009,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 299.01,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 301.914,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 305.505,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 308.403,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 311.318,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 314.218,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 317.09,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 320.024,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 323.003,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 325.94,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 329.463,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 332.473,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 335.438,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 338.629,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 341.537,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 344.458,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 347.359,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 350.919,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 353.868,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 356.783,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 359.692,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 362.588,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 365.541,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 368.52,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 371.49,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 374.454,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 377.373,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 380.298,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 383.196,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 386.213,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 389.209,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 392.202,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 395.256,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Completed",
+        "data": {
+          "activity_id": "45ed8196-301f-4073-ba7a-b292cb8e660b",
+          "status": "Completed",
+          "result": {
+            "download_link": "<REDACTED_SIGNED_URL len=478 host=tos-dashboard-prod.s3.amazonaws.com>"
+          }
+        }
+      }
+    }
+  ],
+  "timing": {
+    "submitted_at": "2026-08-23T14:18:37.413614+00:00",
+    "terminal_at": "2026-08-23T14:25:12.670138+00:00",
+    "poll_count": 121,
+    "poll_interval_s": 2.0,
+    "duration_s": 395.256,
+    "reached_terminal": true
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [
+    "Processing",
+    "Completed"
+  ],
+  "recorded_at": "2026-08-23T14:25:12.686290+00:00"
+}

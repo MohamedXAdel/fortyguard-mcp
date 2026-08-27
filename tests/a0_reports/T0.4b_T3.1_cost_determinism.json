@@ -1,0 +1,33 @@
+{
+  "t3_1_determinism_a": {
+    "delta": {
+      "Heatmap Generation": {
+        "credits": 4220,
+        "count": 1,
+        "per_call": 4220
+      }
+    },
+    "duration_s": 24.019,
+    "poll_count": 6,
+    "terminal": "Completed",
+    "skipped": false
+  },
+  "t3_1_determinism_b": {
+    "delta": {
+      "Heatmap Generation": {
+        "credits": 4220,
+        "count": 1,
+        "per_call": 4220
+      }
+    },
+    "duration_s": 22.285,
+    "poll_count": 4,
+    "terminal": "Completed",
+    "skipped": false
+  },
+  "determinism": {
+    "tiles_identical": true,
+    "stats_identical": false,
+    "n_tiles": 0
+  }
+}

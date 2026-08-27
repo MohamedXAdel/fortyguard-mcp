@@ -1,0 +1,65 @@
+{
+  "case": "e_env_bad_param_name",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/env_params",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "latitude": 33.4484,
+      "longitude": -112.074,
+      "temperature": 30.0,
+      "date_time": {
+        "start_date": "2024-07-15",
+        "start_time": "05:00",
+        "filter_type": 1
+      },
+      "analysis": [
+        "not_a_parameter"
+      ]
+    }
+  },
+  "submit_response": {
+    "status": 422,
+    "body": {
+      "error": true,
+      "status_code": 422,
+      "message": "Field 'analysis.0' is invalid: Input should be 'heat_index_celsius', 'apparent_temperature_celsius', 'wet_bulb_temperature_celsius', 'relative_humidity_percent', 'precipitation_mm', 'cloud_cover_octas', 'air_quality:idx', 'air_quality_no2:idx', 'air_quality_o3:idx', 'air_quality_pm2p5:idx', 'air_quality_pm10:idx', 'air_quality_so2:idx', 'aqi_us_co', 'methane_ppb', 'co2_ppm', 'elevation' or 'solar_irradiance'",
+      "field": "analysis.0",
+      "detail": [
+        {
+          "type": "literal_error",
+          "loc": [
+            "body",
+            "analysis",
+            0
+          ],
+          "msg": "Input should be 'heat_index_celsius', 'apparent_temperature_celsius', 'wet_bulb_temperature_celsius', 'relative_humidity_percent', 'precipitation_mm', 'cloud_cover_octas', 'air_quality:idx', 'air_quality_no2:idx', 'air_quality_o3:idx', 'air_quality_pm2p5:idx', 'air_quality_pm10:idx', 'air_quality_so2:idx', 'aqi_us_co', 'methane_ppb', 'co2_ppm', 'elevation' or 'solar_irradiance'",
+          "input": "not_a_parameter",
+          "ctx": {
+            "expected": "'heat_index_celsius', 'apparent_temperature_celsius', 'wet_bulb_temperature_celsius', 'relative_humidity_percent', 'precipitation_mm', 'cloud_cover_octas', 'air_quality:idx', 'air_quality_no2:idx', 'air_quality_o3:idx', 'air_quality_pm2p5:idx', 'air_quality_pm10:idx', 'air_quality_so2:idx', 'aqi_us_co', 'methane_ppb', 'co2_ppm', 'elevation' or 'solar_irradiance'"
+          }
+        }
+      ]
+    }
+  },
+  "poll_responses": [],
+  "timing": {
+    "submitted_at": "2026-08-23T14:46:26.309730+00:00",
+    "terminal_at": null,
+    "poll_count": 0,
+    "poll_interval_s": 2.0,
+    "poll_ceiling": 12,
+    "duration_s": 0.87,
+    "reached_terminal": false
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [],
+  "recorded_at": "2026-08-23T14:46:27.181202+00:00"
+}

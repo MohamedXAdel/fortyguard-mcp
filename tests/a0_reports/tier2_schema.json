@@ -1,0 +1,393 @@
+{
+  "t2_1_filter2_hours": {
+    "endpoint": "/v1/heatmap",
+    "cost": 4220,
+    "submit_status": 200,
+    "terminal": "Completed",
+    "duration_s": 28.01,
+    "n_features": 112,
+    "property_keys": [
+      "tile_id",
+      "average_temperature",
+      "min_temperature",
+      "max_temperature"
+    ],
+    "tile_m": [
+      100.2,
+      97.6
+    ],
+    "stats_keys": [
+      "temperature_stats",
+      "overall_temperature_distribution",
+      "normal_temperature_distribution",
+      "temperature_frequency"
+    ],
+    "temperature_stats": {
+      "minimum": 31.2455,
+      "maximum": 32.6194,
+      "mean": 31.564541964285716,
+      "standard_deviation": 0.30458271310767887
+    }
+  },
+  "t2_1_filter3_day": {
+    "endpoint": "/v1/heatmap",
+    "cost": 4220,
+    "submit_status": 200,
+    "terminal": "Completed",
+    "duration_s": 24.611,
+    "n_features": 112,
+    "property_keys": [
+      "tile_id",
+      "average_temperature",
+      "min_temperature",
+      "max_temperature"
+    ],
+    "tile_m": [
+      100.2,
+      97.6
+    ],
+    "stats_keys": [
+      "temperature_stats",
+      "overall_temperature_distribution",
+      "normal_temperature_distribution",
+      "temperature_frequency"
+    ],
+    "temperature_stats": {
+      "minimum": 35.652,
+      "maximum": 36.1767,
+      "mean": 35.771113392857146,
+      "standard_deviation": 0.11512509099137412
+    }
+  },
+  "t2_1_filter4_days": {
+    "endpoint": "/v1/heatmap",
+    "cost": 4220,
+    "submit_status": 200,
+    "terminal": "Completed",
+    "duration_s": 37.814,
+    "n_features": 112,
+    "property_keys": [
+      "tile_id",
+      "average_temperature",
+      "min_temperature",
+      "max_temperature"
+    ],
+    "tile_m": [
+      100.2,
+      97.6
+    ],
+    "stats_keys": [
+      "temperature_stats",
+      "overall_temperature_distribution",
+      "normal_temperature_distribution",
+      "temperature_frequency"
+    ],
+    "temperature_stats": {
+      "minimum": 37.8374,
+      "maximum": 37.866,
+      "mean": 37.850775892857136,
+      "standard_deviation": 0.00657730531004671
+    }
+  },
+  "t2_5_exceedance": {
+    "endpoint": "/v1/heatmap",
+    "cost": 4220,
+    "submit_status": 200,
+    "terminal": "Completed",
+    "duration_s": 23.4,
+    "n_features": 112,
+    "property_keys": [
+      "tile_id",
+      "value"
+    ],
+    "tile_m": [
+      100.2,
+      97.6
+    ],
+    "stats_keys": [
+      "activity_id",
+      "analytic_type",
+      "units",
+      "n_cells",
+      "min",
+      "max",
+      "mean"
+    ],
+    "units": "hour",
+    "min": 12.0,
+    "max": 12.0,
+    "mean": 12.0,
+    "n_cells": 112
+  },
+  "t2_6_persistence": {
+    "endpoint": "/v1/heatmap",
+    "cost": 4220,
+    "submit_status": 200,
+    "terminal": "Completed",
+    "duration_s": 21.159,
+    "n_features": 112,
+    "property_keys": [
+      "tile_id",
+      "value"
+    ],
+    "tile_m": [
+      100.2,
+      97.6
+    ],
+    "stats_keys": [
+      "activity_id",
+      "analytic_type",
+      "units",
+      "n_cells",
+      "min",
+      "max",
+      "mean"
+    ],
+    "units": "hour",
+    "min": 12.0,
+    "max": 12.0,
+    "mean": 12.0,
+    "n_cells": 112
+  },
+  "t2_5b_tcm_undocumented": {
+    "endpoint": "/v1/heatmap",
+    "cost": 4220,
+    "submit_status": 200,
+    "terminal": "Completed",
+    "duration_s": 22.101,
+    "n_features": 112,
+    "property_keys": [
+      "tile_id",
+      "average_temperature",
+      "min_temperature",
+      "max_temperature"
+    ],
+    "tile_m": [
+      100.2,
+      97.6
+    ],
+    "stats_keys": [
+      "temperature_stats",
+      "overall_temperature_distribution",
+      "normal_temperature_distribution",
+      "temperature_frequency"
+    ],
+    "temperature_stats": {
+      "minimum": 35.652,
+      "maximum": 36.1767,
+      "mean": 35.771113392857146,
+      "standard_deviation": 0.11512509099137412
+    }
+  },
+  "t2_15_granularity_60": {
+    "endpoint": "/v1/heatmap",
+    "cost": 4220,
+    "submit_status": 200,
+    "terminal": "Completed",
+    "duration_s": 25.85,
+    "n_features": 299,
+    "property_keys": [
+      "tile_id",
+      "average_temperature",
+      "min_temperature",
+      "max_temperature"
+    ],
+    "tile_m": [
+      60.9,
+      60.4
+    ],
+    "stats_keys": [
+      "temperature_stats",
+      "overall_temperature_distribution",
+      "normal_temperature_distribution",
+      "temperature_frequency"
+    ],
+    "temperature_stats": {
+      "minimum": 29.2106,
+      "maximum": 31.7366,
+      "mean": 29.79293177257525,
+      "standard_deviation": 0.5630298785930087
+    }
+  },
+  "t2_15_granularity_80": {
+    "endpoint": "/v1/heatmap",
+    "cost": 4220,
+    "submit_status": 200,
+    "terminal": "Completed",
+    "duration_s": 25.986,
+    "n_features": 170,
+    "property_keys": [
+      "tile_id",
+      "average_temperature",
+      "min_temperature",
+      "max_temperature"
+    ],
+    "tile_m": [
+      81.7,
+      79.3
+    ],
+    "stats_keys": [
+      "temperature_stats",
+      "overall_temperature_distribution",
+      "normal_temperature_distribution",
+      "temperature_frequency"
+    ],
+    "temperature_stats": {
+      "minimum": 29.2113,
+      "maximum": 31.5722,
+      "mean": 29.753860588235298,
+      "standard_deviation": 0.5254605428069639
+    }
+  },
+  "t2_min_aoi_300m": {
+    "endpoint": "/v1/heatmap",
+    "cost": 4220,
+    "submit_status": 200,
+    "terminal": "Completed",
+    "duration_s": 26.003,
+    "n_features": 9,
+    "property_keys": [
+      "tile_id",
+      "average_temperature",
+      "min_temperature",
+      "max_temperature"
+    ],
+    "tile_m": [
+      104.4,
+      103.9
+    ],
+    "stats_keys": [
+      "temperature_stats",
+      "overall_temperature_distribution",
+      "normal_temperature_distribution",
+      "temperature_frequency"
+    ],
+    "temperature_stats": {
+      "minimum": 30.36,
+      "maximum": 30.36,
+      "mean": 30.36,
+      "standard_deviation": 0.0
+    }
+  },
+  "t2_min_aoi_500m": {
+    "endpoint": "/v1/heatmap",
+    "cost": 4220,
+    "submit_status": 200,
+    "terminal": "Completed",
+    "duration_s": 28.769,
+    "n_features": 25,
+    "property_keys": [
+      "tile_id",
+      "average_temperature",
+      "min_temperature",
+      "max_temperature"
+    ],
+    "tile_m": [
+      98.8,
+      104.7
+    ],
+    "stats_keys": [
+      "temperature_stats",
+      "overall_temperature_distribution",
+      "normal_temperature_distribution",
+      "temperature_frequency"
+    ],
+    "temperature_stats": {
+      "minimum": 30.5036,
+      "maximum": 31.1962,
+      "mean": 30.86602,
+      "standard_deviation": 0.228043179390805
+    }
+  },
+  "t2_min_aoi_800m": {
+    "endpoint": "/v1/heatmap",
+    "cost": 4220,
+    "submit_status": 200,
+    "terminal": "Completed",
+    "duration_s": 25.798,
+    "n_features": 60,
+    "property_keys": [
+      "tile_id",
+      "average_temperature",
+      "min_temperature",
+      "max_temperature"
+    ],
+    "tile_m": [
+      98.8,
+      104.7
+    ],
+    "stats_keys": [
+      "temperature_stats",
+      "overall_temperature_distribution",
+      "normal_temperature_distribution",
+      "temperature_frequency"
+    ],
+    "temperature_stats": {
+      "minimum": 30.2652,
+      "maximum": 31.4931,
+      "mean": 30.89028333333333,
+      "standard_deviation": 0.34826854199688034
+    }
+  },
+  "t2_forecast_plus6h": {
+    "endpoint": "/v1/heatmap",
+    "cost": 4220,
+    "submit_status": 200,
+    "terminal": "Completed",
+    "duration_s": 29.624,
+    "n_features": 0,
+    "stats_keys": [
+      "activity_id",
+      "n_cells"
+    ],
+    "n_cells": 0
+  },
+  "t2_8_env_all_params": {
+    "endpoint": "/v1/env_params",
+    "cost": 2900,
+    "submit_status": 200,
+    "terminal": "Completed",
+    "duration_s": 6.019,
+    "result_keys": [
+      "metadata",
+      "locations"
+    ],
+    "metadata_keys": [
+      "timezone",
+      "timezone_offset_hours",
+      "time_range",
+      "timestamps"
+    ]
+  },
+  "t2_12_streetview_back": {
+    "endpoint": "/v1/streetview",
+    "cost": 8600,
+    "submit_status": 200,
+    "terminal": "Completed",
+    "duration_s": 14.986,
+    "result_keys": [
+      "coordinates",
+      "front",
+      "back"
+    ],
+    "coordinates_keys": [
+      "latitude",
+      "longitude"
+    ],
+    "front_keys": [
+      "original_image",
+      "segments",
+      "image_legend",
+      "segmented_image",
+      "image_date"
+    ],
+    "back_keys": [
+      "original_image",
+      "segments",
+      "image_legend",
+      "segmented_image",
+      "image_date"
+    ]
+  },
+  "_total_spend": 62140
+}

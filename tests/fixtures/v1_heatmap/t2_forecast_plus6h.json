@@ -1,0 +1,188 @@
+{
+  "case": "t2_forecast_plus6h",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/heatmap",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "polygon_aoi": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -112.095,
+                    33.47
+                  ],
+                  [
+                    -112.08,
+                    33.47
+                  ],
+                  [
+                    -112.08,
+                    33.479
+                  ],
+                  [
+                    -112.095,
+                    33.479
+                  ],
+                  [
+                    -112.095,
+                    33.47
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "granularity": 100,
+      "date_time": {
+        "start_date": "2026-08-23",
+        "start_time": "20:00",
+        "filter_type": 1
+      }
+    }
+  },
+  "submit_response": {
+    "status": 200,
+    "body": {
+      "error": false,
+      "status_code": 200,
+      "message": "Heatmap Submitted Successfully",
+      "data": {
+        "activity_id": "3f1c1603-6777-4307-82ba-12c0a99e9b5b"
+      }
+    }
+  },
+  "poll_responses": [
+    {
+      "elapsed_s": 5.341,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "3f1c1603-6777-4307-82ba-12c0a99e9b5b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 9.055,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "3f1c1603-6777-4307-82ba-12c0a99e9b5b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 13.376,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "3f1c1603-6777-4307-82ba-12c0a99e9b5b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 17.947,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "3f1c1603-6777-4307-82ba-12c0a99e9b5b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 21.568,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "3f1c1603-6777-4307-82ba-12c0a99e9b5b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 25.641,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "3f1c1603-6777-4307-82ba-12c0a99e9b5b",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 29.624,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Completed",
+        "data": {
+          "activity_id": "3f1c1603-6777-4307-82ba-12c0a99e9b5b",
+          "status": "Completed",
+          "result": {
+            "map_data": {
+              "type": "FeatureCollection",
+              "features": []
+            },
+            "stats_data": {
+              "activity_id": "3f1c1603-6777-4307-82ba-12c0a99e9b5b",
+              "n_cells": 0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "timing": {
+    "submitted_at": "2026-08-23T14:54:56.322933+00:00",
+    "terminal_at": "2026-08-23T14:55:25.947187+00:00",
+    "poll_count": 7,
+    "poll_interval_s": 2.0,
+    "poll_ceiling": 45,
+    "duration_s": 29.624,
+    "reached_terminal": true
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [
+    "Processing",
+    "Completed"
+  ],
+  "recorded_at": "2026-08-23T14:55:25.948323+00:00"
+}

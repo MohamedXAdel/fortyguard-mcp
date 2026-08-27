@@ -1,0 +1,96 @@
+{
+  "case": "e_bad_analytic_type",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/heatmap",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "polygon_aoi": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -112.095,
+                    33.47
+                  ],
+                  [
+                    -112.08,
+                    33.47
+                  ],
+                  [
+                    -112.08,
+                    33.479
+                  ],
+                  [
+                    -112.095,
+                    33.479
+                  ],
+                  [
+                    -112.095,
+                    33.47
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "date_time": {
+        "start_date": "2024-07-15",
+        "start_time": "05:00",
+        "filter_type": 1
+      },
+      "granularity": 100,
+      "analytic_type": "not_a_real_type"
+    }
+  },
+  "submit_response": {
+    "status": 422,
+    "body": {
+      "error": true,
+      "status_code": 422,
+      "message": "Field 'analytic_type' is invalid: Input should be 'tcm', 'time_of_measure', 'exceedance' or 'persistence'",
+      "field": "analytic_type",
+      "detail": [
+        {
+          "type": "literal_error",
+          "loc": [
+            "body",
+            "analytic_type"
+          ],
+          "msg": "Input should be 'tcm', 'time_of_measure', 'exceedance' or 'persistence'",
+          "input": "not_a_real_type",
+          "ctx": {
+            "expected": "'tcm', 'time_of_measure', 'exceedance' or 'persistence'"
+          }
+        }
+      ]
+    }
+  },
+  "poll_responses": [],
+  "timing": {
+    "submitted_at": "2026-08-23T14:45:31.223564+00:00",
+    "terminal_at": null,
+    "poll_count": 0,
+    "poll_interval_s": 2.0,
+    "poll_ceiling": 12,
+    "duration_s": 0.852,
+    "reached_terminal": false
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [],
+  "recorded_at": "2026-08-23T14:45:32.075721+00:00"
+}

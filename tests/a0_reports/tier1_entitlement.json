@@ -1,0 +1,103 @@
+{
+  "t1_1_satellite": {
+    "endpoint": "/v1/satellite",
+    "submit_status": 200,
+    "terminal_status": "Completed",
+    "entitled": true,
+    "credit_delta": {
+      "Tile Satellite Segmentation": {
+        "credits": 14400,
+        "count": 1,
+        "per_call": 14400
+      }
+    },
+    "duration_s": 7.297,
+    "statuses_seen": [
+      "Completed"
+    ],
+    "result_shape": {
+      "terminal_status": "Completed",
+      "result_keys": [
+        "coordinates",
+        "original_image",
+        "orignal_image",
+        "image_year",
+        "segmentation"
+      ],
+      "coordinates_keys": [
+        "latitude",
+        "longitude"
+      ],
+      "original_image_len": 1,
+      "orignal_image_len": 1,
+      "segmentation_keys": [
+        "request_id",
+        "processing_time_seconds",
+        "image_dimensions",
+        "mode",
+        "segments",
+        "image_legend",
+        "image_content"
+      ]
+    }
+  },
+  "t1_2_streetview_front": {
+    "endpoint": "/v1/streetview",
+    "submit_status": 200,
+    "terminal_status": "Completed",
+    "entitled": true,
+    "credit_delta": {
+      "Streetview Segmentation": {
+        "credits": 8600,
+        "count": 1,
+        "per_call": 8600
+      }
+    },
+    "duration_s": 7.136,
+    "statuses_seen": [
+      "Completed"
+    ],
+    "result_shape": {
+      "terminal_status": "Completed",
+      "result_keys": [
+        "coordinates",
+        "front"
+      ],
+      "coordinates_keys": [
+        "latitude",
+        "longitude"
+      ],
+      "front_keys": [
+        "original_image",
+        "segments",
+        "image_legend",
+        "segmented_image",
+        "image_date"
+      ]
+    }
+  },
+  "t1_3_heat_intelligence": {
+    "endpoint": "/v1/heat_intelligence",
+    "submit_status": 200,
+    "terminal_status": "Completed",
+    "entitled": true,
+    "credit_delta": {
+      "Heat Intelligence Report": {
+        "credits": 8600,
+        "count": 1,
+        "per_call": 8600
+      }
+    },
+    "duration_s": 395.256,
+    "statuses_seen": [
+      "Processing",
+      "Completed"
+    ],
+    "result_shape": {
+      "terminal_status": "Completed",
+      "result_keys": [
+        "download_link"
+      ]
+    }
+  }
+}

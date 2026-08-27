@@ -1,0 +1,162 @@
+{
+  "case": "f_0822_2200",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/heatmap",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "polygon_aoi": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -112.095,
+                    33.47
+                  ],
+                  [
+                    -112.08,
+                    33.47
+                  ],
+                  [
+                    -112.08,
+                    33.479
+                  ],
+                  [
+                    -112.095,
+                    33.479
+                  ],
+                  [
+                    -112.095,
+                    33.47
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "granularity": 100,
+      "date_time": {
+        "start_date": "2026-08-22",
+        "start_time": "22:00",
+        "filter_type": 1
+      }
+    }
+  },
+  "submit_response": {
+    "status": 200,
+    "body": {
+      "error": false,
+      "status_code": 200,
+      "message": "Heatmap Submitted Successfully",
+      "data": {
+        "activity_id": "0558f2b8-6539-4758-a8c4-157fb2ac2553"
+      }
+    }
+  },
+  "poll_responses": [
+    {
+      "elapsed_s": 5.765,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "0558f2b8-6539-4758-a8c4-157fb2ac2553",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 9.517,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "0558f2b8-6539-4758-a8c4-157fb2ac2553",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 13.102,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "0558f2b8-6539-4758-a8c4-157fb2ac2553",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 17.531,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "0558f2b8-6539-4758-a8c4-157fb2ac2553",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 22.57,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Completed",
+        "data": {
+          "activity_id": "0558f2b8-6539-4758-a8c4-157fb2ac2553",
+          "status": "Completed",
+          "result": {
+            "map_data": {
+              "type": "FeatureCollection",
+              "features": []
+            },
+            "stats_data": {
+              "activity_id": "0558f2b8-6539-4758-a8c4-157fb2ac2553",
+              "n_cells": 0
+            }
+          }
+        }
+      }
+    }
+  ],
+  "timing": {
+    "submitted_at": "2026-08-23T15:06:25.749177+00:00",
+    "terminal_at": "2026-08-23T15:06:48.319668+00:00",
+    "poll_count": 5,
+    "poll_interval_s": 2.0,
+    "poll_ceiling": 45,
+    "duration_s": 22.57,
+    "reached_terminal": true
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [
+    "Processing",
+    "Completed"
+  ],
+  "recorded_at": "2026-08-23T15:06:48.320029+00:00"
+}

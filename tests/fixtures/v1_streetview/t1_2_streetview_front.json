@@ -1,0 +1,94 @@
+{
+  "case": "t1_2_streetview_front",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/streetview",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "latitude": 33.4484,
+      "longitude": -112.074,
+      "vertical_angle": 10.0,
+      "horizontal_angle": 90.0,
+      "back_view": false
+    }
+  },
+  "submit_response": {
+    "status": 200,
+    "body": {
+      "error": false,
+      "status_code": 200,
+      "message": "Street View Segmentation Submitted Successfully",
+      "data": {
+        "activity_id": "788fb943-b518-4ee9-9814-644086ca5651"
+      }
+    }
+  },
+  "poll_responses": [
+    {
+      "elapsed_s": 7.136,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Completed",
+        "data": {
+          "activity_id": "788fb943-b518-4ee9-9814-644086ca5651",
+          "status": "Completed",
+          "result": {
+            "coordinates": {
+              "latitude": "33.4484",
+              "longitude": "-112.074"
+            },
+            "front": {
+              "original_image": "<BASE64 len=66228 head=/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkS>",
+              "segments": {
+                "ceiling": 16.45,
+                "flower": 0.6,
+                "others": 82.95
+              },
+              "image_legend": {
+                "ceiling": [
+                  45,
+                  229,
+                  198
+                ],
+                "flower": [
+                  255,
+                  192,
+                  203
+                ],
+                "others": [
+                  255,
+                  255,
+                  255
+                ]
+              },
+              "segmented_image": "<BASE64 len=460656 head=iVBORw0KGgoAAAANSUhEUgAAAoAAAAJYCAIAAAB9wsA2AAEAAElEQVR4nNz96bIk>",
+              "image_date": "2015-04-01"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "timing": {
+    "submitted_at": "2026-08-23T14:18:28.652238+00:00",
+    "terminal_at": "2026-08-23T14:18:35.788105+00:00",
+    "poll_count": 1,
+    "poll_interval_s": 2.0,
+    "duration_s": 7.136,
+    "reached_terminal": true
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [
+    "Completed"
+  ],
+  "recorded_at": "2026-08-23T14:18:35.788856+00:00"
+}

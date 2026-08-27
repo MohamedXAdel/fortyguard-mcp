@@ -1,0 +1,61 @@
+{
+  "case": "e_env_lat_out_of_range",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/env_params",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "latitude": 999.0,
+      "longitude": -112.074,
+      "temperature": 30.0,
+      "date_time": {
+        "start_date": "2024-07-15",
+        "start_time": "05:00",
+        "filter_type": 1
+      }
+    }
+  },
+  "submit_response": {
+    "status": 422,
+    "body": {
+      "error": true,
+      "status_code": 422,
+      "message": "Field 'latitude' is invalid: Input should be less than or equal to 90",
+      "field": "latitude",
+      "detail": [
+        {
+          "type": "less_than_equal",
+          "loc": [
+            "body",
+            "latitude"
+          ],
+          "msg": "Input should be less than or equal to 90",
+          "input": 999.0,
+          "ctx": {
+            "le": 90.0
+          }
+        }
+      ]
+    }
+  },
+  "poll_responses": [],
+  "timing": {
+    "submitted_at": "2026-08-23T14:46:27.190043+00:00",
+    "terminal_at": null,
+    "poll_count": 0,
+    "poll_interval_s": 2.0,
+    "poll_ceiling": 12,
+    "duration_s": 1.135,
+    "reached_terminal": false
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [],
+  "recorded_at": "2026-08-23T14:46:28.326602+00:00"
+}

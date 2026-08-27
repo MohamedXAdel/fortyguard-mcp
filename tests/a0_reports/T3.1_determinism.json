@@ -1,0 +1,14 @@
+{
+  "credit_delta": {
+    "Heatmap Generation": {
+      "credits": 4220,
+      "count": 1,
+      "per_call": 4220
+    }
+  },
+  "n_fresh": 112,
+  "n_archived": 112,
+  "n_differing": 0,
+  "stats_identical": true,
+  "verdict": "deterministic"
+}

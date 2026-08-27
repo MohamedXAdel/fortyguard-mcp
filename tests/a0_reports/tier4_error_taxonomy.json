@@ -1,0 +1,242 @@
+{
+  "e_aoi_over_cap": {
+    "endpoint": "/v1/heatmap",
+    "submit_status": 200,
+    "message": "Heatmap Submitted Successfully",
+    "field": null,
+    "terminal_status": "Processing",
+    "poll_count": 150
+  },
+  "e_date_before_floor": {
+    "endpoint": "/v1/heatmap",
+    "submit_status": 200,
+    "message": "Heatmap Submitted Successfully",
+    "field": null,
+    "terminal_status": "Processing",
+    "poll_count": 12
+  },
+  "e_date_far_future": {
+    "endpoint": "/v1/heatmap",
+    "submit_status": 400,
+    "message": "Field 'date_time.start_date' (2027-01-01) is in the future. Requests must be for a past or present date.",
+    "field": "date_time.start_date"
+  },
+  "e_coords_outside_us": {
+    "endpoint": "/v1/heatmap",
+    "submit_status": 200,
+    "message": "Heatmap Submitted Successfully",
+    "field": null,
+    "terminal_status": "Completed",
+    "poll_count": 6
+  },
+  "e_unclosed_ring": {
+    "endpoint": "/v1/heatmap",
+    "submit_status": 400,
+    "message": "Polygon ring is not closed: the first and last positions must be identical.",
+    "field": "polygon_aoi.coordinates[0]"
+  },
+  "e_lat_lon_transposed": {
+    "endpoint": "/v1/heatmap",
+    "submit_status": 400,
+    "message": "Latitude -112.095 is out of bounds; must be between -90.0 and 90.0.",
+    "field": "polygon_aoi.coordinates[0][0]"
+  },
+  "e_granularity_50": {
+    "endpoint": "/v1/heatmap",
+    "submit_status": 422,
+    "message": "Field 'granularity' is invalid: Input should be 60, 80 or 100",
+    "field": "granularity",
+    "detail": [
+      {
+        "type": "literal_error",
+        "loc": [
+          "body",
+          "granularity"
+        ],
+        "msg": "Input should be 60, 80 or 100",
+        "input": 50,
+        "ctx": {
+          "expected": "60, 80 or 100"
+        }
+      }
+    ]
+  },
+  "e_granularity_120": {
+    "endpoint": "/v1/heatmap",
+    "submit_status": 422,
+    "message": "Field 'granularity' is invalid: Input should be 60, 80 or 100",
+    "field": "granularity",
+    "detail": [
+      {
+        "type": "literal_error",
+        "loc": [
+          "body",
+          "granularity"
+        ],
+        "msg": "Input should be 60, 80 or 100",
+        "input": 120,
+        "ctx": {
+          "expected": "60, 80 or 100"
+        }
+      }
+    ]
+  },
+  "e_filter_type_9": {
+    "endpoint": "/v1/heatmap",
+    "submit_status": 422,
+    "message": "Field 'date_time.filter_type' is invalid: Input should be 1, 2, 3 or 4",
+    "field": "date_time.filter_type",
+    "detail": [
+      {
+        "type": "literal_error",
+        "loc": [
+          "body",
+          "date_time",
+          "filter_type"
+        ],
+        "msg": "Input should be 1, 2, 3 or 4",
+        "input": 9,
+        "ctx": {
+          "expected": "1, 2, 3 or 4"
+        }
+      }
+    ]
+  },
+  "e_bad_analytic_type": {
+    "endpoint": "/v1/heatmap",
+    "submit_status": 422,
+    "message": "Field 'analytic_type' is invalid: Input should be 'tcm', 'time_of_measure', 'exceedance' or 'persistence'",
+    "field": "analytic_type",
+    "detail": [
+      {
+        "type": "literal_error",
+        "loc": [
+          "body",
+          "analytic_type"
+        ],
+        "msg": "Input should be 'tcm', 'time_of_measure', 'exceedance' or 'persistence'",
+        "input": "not_a_real_type",
+        "ctx": {
+          "expected": "'tcm', 'time_of_measure', 'exceedance' or 'persistence'"
+        }
+      }
+    ]
+  },
+  "e_geojson_bare_polygon": {
+    "endpoint": "/v1/heatmap",
+    "submit_status": 200,
+    "message": "Heatmap Submitted Successfully",
+    "field": null,
+    "terminal_status": "Completed",
+    "poll_count": 6
+  },
+  "e_geojson_missing_features": {
+    "endpoint": "/v1/heatmap",
+    "submit_status": 400,
+    "message": "FeatureCollection 'features' must be a non-empty array.",
+    "field": "polygon_aoi"
+  },
+  "e_missing_granularity": {
+    "endpoint": "/v1/heatmap",
+    "submit_status": 200,
+    "message": "Heatmap Submitted Successfully",
+    "field": null,
+    "terminal_status": "Completed",
+    "poll_count": 7
+  },
+  "e_missing_polygon": {
+    "endpoint": "/v1/heatmap",
+    "submit_status": 422,
+    "message": "Field 'polygon_aoi' is required.",
+    "field": "polygon_aoi",
+    "detail": [
+      {
+        "type": "missing",
+        "loc": [
+          "body",
+          "polygon_aoi"
+        ],
+        "msg": "Field required",
+        "input": {
+          "date_time": {
+            "start_date": "2024-07-15",
+            "start_time": "05:00",
+            "filter_type": 1
+          },
+          "granularity": 100
+        }
+      }
+    ]
+  },
+  "e_env_empty_analysis": {
+    "endpoint": "/v1/env_params",
+    "submit_status": 200,
+    "message": "Environment Parameters Analysis Submitted Successfully",
+    "field": null,
+    "terminal_status": "Completed",
+    "poll_count": 1
+  },
+  "e_env_bad_param_name": {
+    "endpoint": "/v1/env_params",
+    "submit_status": 422,
+    "message": "Field 'analysis.0' is invalid: Input should be 'heat_index_celsius', 'apparent_temperature_celsius', 'wet_bulb_temperature_celsius', 'relative_humidity_percent', 'precipitation_mm', 'cloud_cover_octas', 'air_quality:idx', 'air_quality_no2:idx', 'air_quality_o3:idx', 'air_quality_pm2p5:idx', 'air_quality_pm10:idx', 'air_quality_so2:idx', 'aqi_us_co', 'methane_ppb', 'co2_ppm', 'elevation' or 'solar_irradiance'",
+    "field": "analysis.0",
+    "detail": [
+      {
+        "type": "literal_error",
+        "loc": [
+          "body",
+          "analysis",
+          0
+        ],
+        "msg": "Input should be 'heat_index_celsius', 'apparent_temperature_celsius', 'wet_bulb_temperature_celsius', 'relative_humidity_percent', 'precipitation_mm', 'cloud_cover_octas', 'air_quality:idx', 'air_quality_no2:idx', 'air_quality_o3:idx', 'air_quality_pm2p5:idx', 'air_quality_pm10:idx', 'air_quality_so2:idx', 'aqi_us_co', 'methane_ppb', 'co2_ppm', 'elevation' or 'solar_irradiance'",
+        "input": "not_a_parameter",
+        "ctx": {
+          "expected": "'heat_index_celsius', 'apparent_temperature_celsius', 'wet_bulb_temperature_celsius', 'relative_humidity_percent', 'precipitation_mm', 'cloud_cover_octas', 'air_quality:idx', 'air_quality_no2:idx', 'air_quality_o3:idx', 'air_quality_pm2p5:idx', 'air_quality_pm10:idx', 'air_quality_so2:idx', 'aqi_us_co', 'methane_ppb', 'co2_ppm', 'elevation' or 'solar_irradiance'"
+        }
+      }
+    ]
+  },
+  "e_env_lat_out_of_range": {
+    "endpoint": "/v1/env_params",
+    "submit_status": 422,
+    "message": "Field 'latitude' is invalid: Input should be less than or equal to 90",
+    "field": "latitude",
+    "detail": [
+      {
+        "type": "less_than_equal",
+        "loc": [
+          "body",
+          "latitude"
+        ],
+        "msg": "Input should be less than or equal to 90",
+        "input": 999.0,
+        "ctx": {
+          "le": 90.0
+        }
+      }
+    ]
+  },
+  "e_invalid_api_key": {
+    "status_code": 401,
+    "body": {
+      "error": true,
+      "status_code": 401,
+      "details": {
+        "message": "Invalid or unknown API key."
+      }
+    }
+  },
+  "_credits_spent": {
+    "Heatmap Generation": {
+      "credits": 12660,
+      "count": 3,
+      "per_call": 4220
+    },
+    "Environment Parameter Analysis": {
+      "credits": 2900,
+      "count": 1,
+      "per_call": 2900
+    }
+  }
+}

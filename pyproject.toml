@@ -1,0 +1,121 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fortyguard-mcp"
+version = "0.1.0"
+description = "MCP server for the FortyGuard Temperature API — hyperlocal urban heat data"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.11"
+authors = [{ name = "Mohamed Ahmed" }]
+keywords = ["mcp", "model-context-protocol", "fortyguard", "temperature", "urban-heat", "climate"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+]
+
+# mcp 2.0.0 declares >=3.10 and supports 3.10-3.14. We floor at 3.11 because
+# 3.10 reaches end of life in October 2026.
+dependencies = [
+    "mcp>=2.0.0",
+    "httpx>=0.27",
+    "pydantic>=2.9",
+    "pydantic-settings>=2.5",
+    "platformdirs>=4.0",
+]
+
+[project.urls]
+# TODO(publish): replace mohamedxadel before the first release. It also
+# appears in README.md - `grep -rn mohamedxadel` finds every occurrence.
+Homepage = "https://github.com/mohamedxadel/fortyguard-mcp"
+Repository = "https://github.com/mohamedxadel/fortyguard-mcp"
+Issues = "https://github.com/mohamedxadel/fortyguard-mcp/issues"
+Changelog = "https://github.com/mohamedxadel/fortyguard-mcp/blob/main/CHANGELOG.md"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.24",
+    "ruff>=0.6",
+    "mypy>=1.11",
+]
+# Cross-check dependencies for the tests that VERIFY THE PROJECT'S TWO MEASURED
+# CONSTANTS, kept out of `dev` because neither is a runtime dependency and pyproj
+# in particular drags in PROJ.
+#
+# They are a separate extra because leaving them out of CI had a specific,
+# invisible cost: `pip install -e ".[dev]"` gives neither, so the 7 parametrised
+# `test_area_matches_pyproj_geodesic` cases and `test_estimate_never_undershoots
+# _tiktoken` all skipped - and those are the only proofs that the geodesic area
+# agrees with pyproj to 0.0001% and that the chars-per-token ratios do not
+# undershoot. CI ran 470 of 478 tests and skipped precisely the two claims most
+# often quoted. The `verify` job installs this.
+verify = [
+    "pyproj>=3.6",
+    "tiktoken>=0.7",
+]
+
+[project.scripts]
+fortyguard-mcp = "fortyguard_mcp.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fortyguard_mcp"]
+
+[tool.hatch.build.targets.sdist]
+# `tests/` IS included, fixtures and all. It is 3.4 MB uncompressed and worth
+# every byte: it makes the whole suite runnable from an unpacked sdist with no
+# API key, no credits and no network, which is the strongest thing this package
+# can hand a reviewer.
+#
+# `scripts/` is not. The A0 campaign runners and the ported exploratory
+# notebooks are a durable asset of the project and belong in the repository, but
+# they import numpy, pyproj, rasterio and requests - none of them declared here,
+# because nothing in `src/` needs them. Shipping code that cannot run in the
+# environment it ships into is worse than not shipping it.
+exclude = ["scripts/"]
+
+[tool.ruff]
+line-length = 96
+target-version = "py311"
+# Matches mypy's exclude below. `scripts/` holds the A0 campaign runners and the
+# ported exploratory notebooks - a durable asset, but not shipped in the wheel
+# and not written to the package's standard.
+#
+# They were previously in scope, which made `ruff check .` emit 43 findings and
+# so nobody ran it; the habit became `ruff check src`, and the TEST suite
+# quietly drifted to 12 findings of its own. A gate that is too noisy to run is
+# not a gate. `src` and `tests` are both held to it now.
+exclude = ["scripts"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+ignore = ["B008"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_unreachable = true
+# Test fixtures and campaign scripts are exploratory, not shipped.
+exclude = ["^tests/", "^scripts/"]
+
+# NOTE: run mypy in an environment holding only this package's dependencies.
+# A dev box that also has numpy installed (for scripts/exploratory/) will trip
+# over numpy's stubs, which use 3.12-only syntax. Nothing in src/ imports numpy;
+# `pip install -e ".[dev]"` in a fresh venv checks clean.
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = [".", "src"]
+asyncio_mode = "auto"
+markers = [
+    "live: hits the real FortyGuard API and costs credits (deselected by default)",
+]
+addopts = "-m 'not live'"

@@ -1,0 +1,123 @@
+{
+  "case": "t1_1_satellite",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/satellite",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "sat": {
+        "latitude": 33.4484,
+        "longitude": -112.074
+      },
+      "date_time": {
+        "start_date": "2024-07-15",
+        "start_time": "14:00",
+        "filter_type": 1
+      },
+      "granularity": 80
+    }
+  },
+  "submit_response": {
+    "status": 200,
+    "body": {
+      "error": false,
+      "status_code": 200,
+      "message": "Satellite Segmentation Submitted Successfully",
+      "data": {
+        "activity_id": "c81ea595-eb76-4231-b503-c26229698476"
+      }
+    }
+  },
+  "poll_responses": [
+    {
+      "elapsed_s": 7.297,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Completed",
+        "data": {
+          "activity_id": "c81ea595-eb76-4231-b503-c26229698476",
+          "status": "Completed",
+          "result": {
+            "coordinates": {
+              "latitude": "33.4484",
+              "longitude": "-112.074"
+            },
+            "original_image": [
+              "<BASE64 len=114696 head=iVBORw0KGgoAAAANSUhEUgAAAV4AAAFeCAMAAAD69YcoAAAC/VBMVEULCg4NDRMP>"
+            ],
+            "orignal_image": [
+              "<BASE64 len=114696 head=iVBORw0KGgoAAAANSUhEUgAAAV4AAAFeCAMAAAD69YcoAAAC/VBMVEULCg4NDRMP>"
+            ],
+            "image_year": 2026,
+            "segmentation": {
+              "request_id": "dffb479f",
+              "processing_time_seconds": 1.137383,
+              "image_dimensions": {
+                "width": 350,
+                "height": 350
+              },
+              "mode": "sat",
+              "segments": {
+                "building": 71.15,
+                "road, route": 16.07,
+                "sidewalk, pavement": 10.49,
+                "ship": 2.02,
+                "others": 0.28
+              },
+              "image_legend": {
+                "building": [
+                  180,
+                  120,
+                  120
+                ],
+                "road, route": [
+                  140,
+                  140,
+                  140
+                ],
+                "sidewalk, pavement": [
+                  235,
+                  255,
+                  7
+                ],
+                "ship": [
+                  53,
+                  229,
+                  45
+                ],
+                "others": [
+                  255,
+                  255,
+                  255
+                ]
+              },
+              "image_content": "<BASE64 len=235976 head=iVBORw0KGgoAAAANSUhEUgAAAV4AAAFeCAIAAABCSeBNAAEAAElEQVR4nMT9S5Mj>"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "timing": {
+    "submitted_at": "2026-08-23T14:18:19.310755+00:00",
+    "terminal_at": "2026-08-23T14:18:26.607375+00:00",
+    "poll_count": 1,
+    "poll_interval_s": 2.0,
+    "duration_s": 7.297,
+    "reached_terminal": true
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [
+    "Completed"
+  ],
+  "recorded_at": "2026-08-23T14:18:26.609220+00:00"
+}

@@ -1,0 +1,28 @@
+# Secrets — MUST stay first. Never remove.
+.env
+*.env
+!.env.example
+
+# Campaign artifacts that may contain signed URLs before scrubbing
+scripts/a0/_raw/
+*.pdf
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# OS
+.DS_Store
+Thumbs.db

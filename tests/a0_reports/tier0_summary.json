@@ -1,0 +1,66 @@
+{
+  "T0.1": {
+    "accepted_method": null,
+    "balance": null,
+    "raw": {
+      "attempts": [
+        {
+          "method": "POST",
+          "status": 422,
+          "body": {
+            "error": true,
+            "status_code": 422,
+            "message": "Field 'api_key' is required.",
+            "field": "api_key",
+            "detail": [
+              {
+                "type": "missing",
+                "loc": [
+                  "body",
+                  "api_key"
+                ],
+                "msg": "Field required",
+                "input": {}
+              }
+            ]
+          }
+        },
+        {
+          "method": "GET",
+          "status": 405,
+          "body": {
+            "detail": "Method Not Allowed"
+          }
+        }
+      ],
+      "accepted_method": null
+    }
+  },
+  "T0.2": {
+    "statuses_observed": [
+      "Completed",
+      "Processing"
+    ]
+  },
+  "T0.3": {
+    "activity_id": "e3d079c1-b5af-49dc-a061-d533d42d8022",
+    "status_code": 404,
+    "body": {
+      "error": true,
+      "status_code": 404,
+      "details": {
+        "message": "No activity found for the provided activity_id."
+      }
+    }
+  },
+  "T0.4": {
+    "credits_delta": null,
+    "duration_s": 36.392,
+    "terminal": "Completed",
+    "statuses_seen": [
+      "Processing",
+      "Completed"
+    ],
+    "poll_count": 8
+  }
+}

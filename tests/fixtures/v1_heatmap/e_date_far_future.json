@@ -1,0 +1,81 @@
+{
+  "case": "e_date_far_future",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/heatmap",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "polygon_aoi": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -112.095,
+                    33.47
+                  ],
+                  [
+                    -112.08,
+                    33.47
+                  ],
+                  [
+                    -112.08,
+                    33.479
+                  ],
+                  [
+                    -112.095,
+                    33.479
+                  ],
+                  [
+                    -112.095,
+                    33.47
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "date_time": {
+        "start_date": "2027-01-01",
+        "start_time": "05:00",
+        "filter_type": 1
+      },
+      "granularity": 100
+    }
+  },
+  "submit_response": {
+    "status": 400,
+    "body": {
+      "error": true,
+      "status_code": 400,
+      "message": "Field 'date_time.start_date' (2027-01-01) is in the future. Requests must be for a past or present date.",
+      "field": "date_time.start_date"
+    }
+  },
+  "poll_responses": [],
+  "timing": {
+    "submitted_at": "2026-08-23T14:44:59.906835+00:00",
+    "terminal_at": null,
+    "poll_count": 0,
+    "poll_interval_s": 2.0,
+    "poll_ceiling": 12,
+    "duration_s": 1.66,
+    "reached_terminal": false
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [],
+  "recorded_at": "2026-08-23T14:45:01.567517+00:00"
+}

@@ -1,0 +1,63 @@
+{
+  "case": "e_missing_polygon",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/heatmap",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "date_time": {
+        "start_date": "2024-07-15",
+        "start_time": "05:00",
+        "filter_type": 1
+      },
+      "granularity": 100
+    }
+  },
+  "submit_response": {
+    "status": 422,
+    "body": {
+      "error": true,
+      "status_code": 422,
+      "message": "Field 'polygon_aoi' is required.",
+      "field": "polygon_aoi",
+      "detail": [
+        {
+          "type": "missing",
+          "loc": [
+            "body",
+            "polygon_aoi"
+          ],
+          "msg": "Field required",
+          "input": {
+            "date_time": {
+              "start_date": "2024-07-15",
+              "start_time": "05:00",
+              "filter_type": 1
+            },
+            "granularity": 100
+          }
+        }
+      ]
+    }
+  },
+  "poll_responses": [],
+  "timing": {
+    "submitted_at": "2026-08-23T14:46:20.372914+00:00",
+    "terminal_at": null,
+    "poll_count": 0,
+    "poll_interval_s": 2.0,
+    "poll_ceiling": 12,
+    "duration_s": 0.899,
+    "reached_terminal": false
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [],
+  "recorded_at": "2026-08-23T14:46:21.273241+00:00"
+}

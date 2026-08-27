@@ -1,0 +1,96 @@
+{
+  "case": "e_filter_type_9",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/heatmap",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "polygon_aoi": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -112.095,
+                    33.47
+                  ],
+                  [
+                    -112.08,
+                    33.47
+                  ],
+                  [
+                    -112.08,
+                    33.479
+                  ],
+                  [
+                    -112.095,
+                    33.479
+                  ],
+                  [
+                    -112.095,
+                    33.47
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "date_time": {
+        "start_date": "2024-07-15",
+        "start_time": "05:00",
+        "filter_type": 9
+      },
+      "granularity": 100
+    }
+  },
+  "submit_response": {
+    "status": 422,
+    "body": {
+      "error": true,
+      "status_code": 422,
+      "message": "Field 'date_time.filter_type' is invalid: Input should be 1, 2, 3 or 4",
+      "field": "date_time.filter_type",
+      "detail": [
+        {
+          "type": "literal_error",
+          "loc": [
+            "body",
+            "date_time",
+            "filter_type"
+          ],
+          "msg": "Input should be 1, 2, 3 or 4",
+          "input": 9,
+          "ctx": {
+            "expected": "1, 2, 3 or 4"
+          }
+        }
+      ]
+    }
+  },
+  "poll_responses": [],
+  "timing": {
+    "submitted_at": "2026-08-23T14:45:30.368638+00:00",
+    "terminal_at": null,
+    "poll_count": 0,
+    "poll_interval_s": 2.0,
+    "poll_ceiling": 12,
+    "duration_s": 0.846,
+    "reached_terminal": false
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [],
+  "recorded_at": "2026-08-23T14:45:31.215548+00:00"
+}

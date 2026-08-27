@@ -1,0 +1,135 @@
+name: CI
+
+# The gate the project already holds itself to, run by a machine instead of by
+# someone remembering. `ruff check .` covers src AND tests: it used to be run as
+# `ruff check src` because the whole-repo command was too noisy, and 12 findings
+# quietly accumulated in the test suite while nobody looked.
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: py${{ matrix.python }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        # 3.11 is the floor (3.10 reaches EOL in Oct 2026); 3.14 is the ceiling
+        # the MCP SDK supports. Windows is included because that is where this
+        # is developed, and the storage layer touches paths and atomic renames,
+        # which is exactly where POSIX assumptions break.
+        python: ["3.11", "3.12", "3.13", "3.14"]
+        os: [ubuntu-latest]
+        include:
+          - python: "3.14"
+            os: windows-latest
+          - python: "3.14"
+            os: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Install (declared dependencies only)
+        # No extra packages: the point is to prove the dependency list in
+        # pyproject.toml is complete. A previous clean-room run caught an
+        # undeclared `requests` and a missing README that broke the build.
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Lint
+        run: ruff check .
+
+      - name: Type check
+        # `src` only, matching the tool config: tests and scripts are excluded
+        # there for reasons recorded in pyproject.toml.
+        run: mypy src
+
+      - name: Test
+        # Offline against 50 recorded fixtures. No API key, no credits, no
+        # network - so this is green even when FortyGuard is down.
+        run: pytest -q
+
+      - name: Console script is installed and importable
+        run: |
+          python -c "import fortyguard_mcp, sys; print(fortyguard_mcp.__name__)"
+          python -c "from fortyguard_mcp.server import build_server; build_server()"
+
+  verify:
+    name: cross-check the measured constants
+    runs-on: ubuntu-latest
+    # The `test` job deliberately installs declared dependencies only, which
+    # proves the dependency list is complete - and skips the 8 tests that need a
+    # cross-check library. Those 8 are the ONLY proofs of the two numbers this
+    # package quotes most: that the geodesic area agrees with pyproj to better
+    # than 0.0001% at every US latitude, and that the chars-per-token ratios
+    # never undershoot (a ratio that is too high inlines an oversized payload,
+    # which is round 2 defect #9).
+    #
+    # So they get their own job rather than being folded into `dev`: the
+    # completeness check stays honest, and the numbers stop being unverified.
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install with cross-check extras
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev,verify]"
+      - name: Assert nothing skips
+        # A skip here means a cross-check silently stopped running, which is
+        # exactly how `test_geo.py` went 35-tests-dark for months (round 8).
+        run: pytest -q -rs --strict-markers -W error::pytest.PytestUnraisableExceptionWarning
+      - name: Fail if any test was skipped
+        run: |
+          pytest -q -rs 2>&1 | tee /tmp/out.txt
+          if grep -qE "[0-9]+ skipped" /tmp/out.txt; then
+            echo "::error::a test skipped in the verify job - the cross-checks must all run"
+            exit 1
+          fi
+
+  build:
+    name: build + install from a wheel
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build sdist and wheel
+        run: |
+          python -m pip install --upgrade pip build
+          python -m build
+
+      - name: No credentials in either artifact
+        # The thing that ships is the thing to check. This caught a live API key
+        # that had been pasted into a test as fixture data - `tests/` is in the
+        # sdist, so it would have reached GitHub and PyPI.
+        run: python scripts/check_artifacts.py dist/
+
+      - name: Install the wheel into a clean environment
+        # A fresh venv holding ONLY the wheel and its declared dependencies -
+        # the check that has repeatedly caught what the dev box was hiding.
+        run: |
+          python -m venv /tmp/clean
+          /tmp/clean/bin/pip install dist/*.whl
+          /tmp/clean/bin/python -c "from fortyguard_mcp.server import build_server; build_server()"
+          test -x /tmp/clean/bin/fortyguard-mcp
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/

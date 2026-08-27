@@ -1,0 +1,8 @@
+# Normalise to LF in the repository. Without this a Windows checkout commits
+# CRLF and every file reads as fully rewritten on a Linux machine.
+* text=auto eol=lf
+
+# Binary fixtures and images, never touched.
+*.png binary
+*.pdf binary
+*.tif binary

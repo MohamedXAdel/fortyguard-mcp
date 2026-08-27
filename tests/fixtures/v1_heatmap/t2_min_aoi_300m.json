@@ -1,0 +1,747 @@
+{
+  "case": "t2_min_aoi_300m",
+  "kind": "async",
+  "request": {
+    "method": "POST",
+    "url": "https://api.fortyguard.com/v1/heatmap",
+    "headers_redacted": [
+      "api-key"
+    ],
+    "body": {
+      "polygon_aoi": {
+        "type": "FeatureCollection",
+        "features": [
+          {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+              "type": "Polygon",
+              "coordinates": [
+                [
+                  [
+                    -112.07561469953563,
+                    33.44705253323751
+                  ],
+                  [
+                    -112.07238530046436,
+                    33.44705253323751
+                  ],
+                  [
+                    -112.07238530046436,
+                    33.44974746676249
+                  ],
+                  [
+                    -112.07561469953563,
+                    33.44974746676249
+                  ],
+                  [
+                    -112.07561469953563,
+                    33.44705253323751
+                  ]
+                ]
+              ]
+            }
+          }
+        ]
+      },
+      "granularity": 100,
+      "date_time": {
+        "start_date": "2024-07-15",
+        "start_time": "05:00",
+        "filter_type": 1
+      }
+    }
+  },
+  "submit_response": {
+    "status": 200,
+    "body": {
+      "error": false,
+      "status_code": 200,
+      "message": "Heatmap Submitted Successfully",
+      "data": {
+        "activity_id": "a90559ed-d000-4901-9f88-5296cbfe4843"
+      }
+    }
+  },
+  "poll_responses": [
+    {
+      "elapsed_s": 5.48,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a90559ed-d000-4901-9f88-5296cbfe4843",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 8.651,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a90559ed-d000-4901-9f88-5296cbfe4843",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 11.548,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a90559ed-d000-4901-9f88-5296cbfe4843",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 15.124,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a90559ed-d000-4901-9f88-5296cbfe4843",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 18.876,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a90559ed-d000-4901-9f88-5296cbfe4843",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 22.242,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Processing",
+        "data": {
+          "activity_id": "a90559ed-d000-4901-9f88-5296cbfe4843",
+          "status": "Processing"
+        }
+      }
+    },
+    {
+      "elapsed_s": 26.003,
+      "status_code": 200,
+      "body": {
+        "error": false,
+        "status_code": 200,
+        "message": "Completed",
+        "data": {
+          "activity_id": "a90559ed-d000-4901-9f88-5296cbfe4843",
+          "status": "Completed",
+          "result": {
+            "map_data": {
+              "type": "FeatureCollection",
+              "features": [
+                {
+                  "id": "0",
+                  "type": "Feature",
+                  "properties": {
+                    "tile_id": 0,
+                    "average_temperature": 30.36,
+                    "min_temperature": 30.36,
+                    "max_temperature": 30.36
+                  },
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -112.07538575058976,
+                          33.447357291860065
+                        ],
+                        [
+                          -112.07427376668177,
+                          33.44736693140416
+                        ],
+                        [
+                          -112.07428515078183,
+                          33.44829027272671
+                        ],
+                        [
+                          -112.07539714646802,
+                          33.44828063284675
+                        ],
+                        [
+                          -112.07538575058976,
+                          33.447357291860065
+                        ]
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "1",
+                  "type": "Feature",
+                  "properties": {
+                    "tile_id": 1,
+                    "average_temperature": 30.36,
+                    "min_temperature": 30.36,
+                    "max_temperature": 30.36
+                  },
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -112.07427376668177,
+                          33.44736693140416
+                        ],
+                        [
+                          -112.07316178224481,
+                          33.44737656097909
+                        ],
+                        [
+                          -112.07317315456667,
+                          33.44829990263717
+                        ],
+                        [
+                          -112.07428515078183,
+                          33.44829027272671
+                        ],
+                        [
+                          -112.07427376668177,
+                          33.44736693140416
+                        ]
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "2",
+                  "type": "Feature",
+                  "properties": {
+                    "tile_id": 2,
+                    "average_temperature": 30.36,
+                    "min_temperature": 30.36,
+                    "max_temperature": 30.36
+                  },
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -112.07316178224481,
+                          33.44737656097909
+                        ],
+                        [
+                          -112.07204979727946,
+                          33.447386180584836
+                        ],
+                        [
+                          -112.0720611578231,
+                          33.448309522578086
+                        ],
+                        [
+                          -112.07317315456667,
+                          33.44829990263717
+                        ],
+                        [
+                          -112.07316178224481,
+                          33.44737656097909
+                        ]
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "3",
+                  "type": "Feature",
+                  "properties": {
+                    "tile_id": 3,
+                    "average_temperature": 30.36,
+                    "min_temperature": 30.36,
+                    "max_temperature": 30.36
+                  },
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -112.07539714646802,
+                          33.44828063284675
+                        ],
+                        [
+                          -112.07428515078183,
+                          33.44829027272671
+                        ],
+                        [
+                          -112.07429653540089,
+                          33.44921361390812
+                        ],
+                        [
+                          -112.0754085428658,
+                          33.44920397369228
+                        ],
+                        [
+                          -112.07539714646802,
+                          33.44828063284675
+                        ]
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "4",
+                  "type": "Feature",
+                  "properties": {
+                    "tile_id": 4,
+                    "average_temperature": 30.36,
+                    "min_temperature": 30.36,
+                    "max_temperature": 30.36
+                  },
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -112.07428515078183,
+                          33.44829027272671
+                        ],
+                        [
+                          -112.07317315456667,
+                          33.44829990263717
+                        ],
+                        [
+                          -112.073184527407,
+                          33.449223244154105
+                        ],
+                        [
+                          -112.07429653540089,
+                          33.44921361390812
+                        ],
+                        [
+                          -112.07428515078183,
+                          33.44829027272671
+                        ]
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "5",
+                  "type": "Feature",
+                  "properties": {
+                    "tile_id": 5,
+                    "average_temperature": 30.36,
+                    "min_temperature": 30.36,
+                    "max_temperature": 30.36
+                  },
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -112.07317315456667,
+                          33.44829990263717
+                        ],
+                        [
+                          -112.0720611578231,
+                          33.448309522578086
+                        ],
+                        [
+                          -112.07207251888465,
+                          33.449232864430215
+                        ],
+                        [
+                          -112.073184527407,
+                          33.449223244154105
+                        ],
+                        [
+                          -112.07317315456667,
+                          33.44829990263717
+                        ]
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "6",
+                  "type": "Feature",
+                  "properties": {
+                    "tile_id": 6,
+                    "average_temperature": 30.36,
+                    "min_temperature": 30.36,
+                    "max_temperature": 30.36
+                  },
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -112.0754085428658,
+                          33.44920397369226
+                        ],
+                        [
+                          -112.07429653540089,
+                          33.449213613908114
+                        ],
+                        [
+                          -112.07430792053896,
+                          33.450136954948384
+                        ],
+                        [
+                          -112.07541993978312,
+                          33.450127314396646
+                        ],
+                        [
+                          -112.0754085428658,
+                          33.44920397369226
+                        ]
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "7",
+                  "type": "Feature",
+                  "properties": {
+                    "tile_id": 7,
+                    "average_temperature": 30.36,
+                    "min_temperature": 30.36,
+                    "max_temperature": 30.36
+                  },
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -112.07429653540089,
+                          33.449213613908114
+                        ],
+                        [
+                          -112.073184527407,
+                          33.4492232441541
+                        ],
+                        [
+                          -112.07319590076577,
+                          33.45014658552991
+                        ],
+                        [
+                          -112.07430792053896,
+                          33.450136954948384
+                        ],
+                        [
+                          -112.07429653540089,
+                          33.449213613908114
+                        ]
+                      ]
+                    ]
+                  }
+                },
+                {
+                  "id": "8",
+                  "type": "Feature",
+                  "properties": {
+                    "tile_id": 8,
+                    "average_temperature": 30.36,
+                    "min_temperature": 30.36,
+                    "max_temperature": 30.36
+                  },
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [
+                          -112.073184527407,
+                          33.4492232441541
+                        ],
+                        [
+                          -112.07207251888465,
+                          33.44923286443021
+                        ],
+                        [
+                          -112.07208388046413,
+                          33.45015620614119
+                        ],
+                        [
+                          -112.07319590076577,
+                          33.45014658552991
+                        ],
+                        [
+                          -112.073184527407,
+                          33.4492232441541
+                        ]
+                      ]
+                    ]
+                  }
+                }
+              ]
+            },
+            "stats_data": {
+              "temperature_stats": {
+                "minimum": 30.36,
+                "maximum": 30.36,
+                "mean": 30.36,
+                "standard_deviation": 0.0
+              },
+              "overall_temperature_distribution": [
+                30.36,
+                30.36,
+                30.36,
+                30.36,
+                30.36
+              ],
+              "normal_temperature_distribution": {
+                "x_axis": [
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36,
+                  30.36
+                ],
+                "y_axis": [
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null,
+                  null
+                ]
+              },
+              "temperature_frequency": {
+                "x_axis": [
+                  30.0
+                ],
+                "y_axis": [
+                  9
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "timing": {
+    "submitted_at": "2026-08-23T14:53:27.990967+00:00",
+    "terminal_at": "2026-08-23T14:53:53.993515+00:00",
+    "poll_count": 7,
+    "poll_interval_s": 2.0,
+    "poll_ceiling": 45,
+    "duration_s": 26.003,
+    "reached_terminal": true
+  },
+  "credits": {
+    "before": null,
+    "after": null,
+    "delta": null
+  },
+  "observed_statuses": [
+    "Processing",
+    "Completed"
+  ],
+  "recorded_at": "2026-08-23T14:53:53.993886+00:00"
+}
