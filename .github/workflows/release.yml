@@ -6,13 +6,14 @@ name: Release
 # this repository's secrets to leak or rotate. Configure it once at
 # https://pypi.org/manage/account/publishing/ with:
 #
-#   owner        mohamedxadel
+#   owner        MohamedXAdel
 #   repository   fortyguard-mcp
 #   workflow     release.yml
 #   environment  pypi
 #
 # The `pypi` environment is where you add a required reviewer if you want a
-# human to approve each release.
+# human to approve each release. TestPyPI uses the `testpypi` environment
+# and its own pending publisher at test.pypi.org.
 
 on:
   push:

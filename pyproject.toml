@@ -9,7 +9,7 @@ description = "MCP server for the FortyGuard Temperature API — hyperlocal urba
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.11"
-authors = [{ name = "Mohamed Ahmed" }]
+authors = [{ name = "Mohamed adel", email = "122820327+MohamedXAdel@users.noreply.github.com" }]
 keywords = ["mcp", "model-context-protocol", "fortyguard", "temperature", "urban-heat", "climate"]
 classifiers = [
     "Development Status :: 3 - Alpha",
