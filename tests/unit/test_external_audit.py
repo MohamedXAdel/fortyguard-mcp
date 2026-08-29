@@ -314,17 +314,31 @@ async def test_a_resource_whose_payload_vanished_reports_instead_of_raising(
 # MEDIUM-5 — secrets covered by a gitignore at every level
 # --------------------------------------------------------------------------- #
 
-def test_a_parent_gitignore_covers_env_at_any_depth() -> None:
+def test_the_gitignore_covers_env_at_any_depth() -> None:
     """
-    `fortyguard-mcp/.gitignore` only covered its own subtree, so
-    `CodeBase/.env` - holding the same live key - was covered by nothing.
+    A `.env` anywhere in this repository must be ignored, and `.env.example`
+    must not be.
+
+    Checked against THIS repository's own `.gitignore`. An earlier version
+    asserted against the parent directory of the checkout, which was the
+    developer's enclosing project folder - true on that one machine, absent for
+    anyone who cloned, and it failed the moment CI ran.
+
+    A bare pattern with no slash applies at every depth in git, so `.env` alone
+    is sufficient; `**/.env` is the explicit spelling of the same rule.
     """
-    root = Path(__file__).resolve().parents[3]
-    ignore = root / ".gitignore"
-    assert ignore.exists(), f"no .gitignore at {root}"
-    text = ignore.read_text(encoding="utf-8")
-    assert "**/.env" in text
-    assert "!.env.example" in text
+    ignore = Path(__file__).resolve().parents[2] / ".gitignore"
+    assert ignore.exists(), f"no .gitignore at {ignore.parent}"
+
+    lines = [ln.strip() for ln in ignore.read_text(encoding="utf-8").splitlines()]
+    assert any(ln in (".env", "**/.env") for ln in lines), \
+        "no pattern ignoring .env at every depth"
+    assert "!.env.example" in lines, "the example file must stay tracked"
+
+    # The negation has to come after the pattern it re-includes, or git ignores it.
+    env_at = min(i for i, ln in enumerate(lines) if ln in (".env", "**/.env", "*.env"))
+    assert lines.index("!.env.example") > env_at, \
+        "!.env.example must follow the .env patterns to take effect"
 
 
 def test_a_very_short_key_does_not_corrupt_the_payload() -> None:

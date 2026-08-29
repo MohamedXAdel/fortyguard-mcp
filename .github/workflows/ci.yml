@@ -54,7 +54,16 @@ jobs:
       - name: Type check
         # `src` only, matching the tool config: tests and scripts are excluded
         # there for reasons recorded in pyproject.toml.
-        run: mypy src
+        #
+        # All three platforms, not just the runner's. mypy narrows
+        # `sys.platform` to whatever it is running on, so platform-conditional
+        # code type-checks clean on two hosts and fails on the third - which is
+        # exactly how a macOS-only `unreachable` error reached CI once.
+        run: |
+          mypy src
+          mypy src --platform linux
+          mypy src --platform darwin
+          mypy src --platform win32
 
       - name: Test
         # Offline against 50 recorded fixtures. No API key, no credits, no

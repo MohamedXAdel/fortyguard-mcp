@@ -30,20 +30,34 @@ def _appdata() -> Path:
     return Path(os.environ.get("APPDATA") or _home() / "AppData/Roaming")
 
 
-def _claude_desktop() -> Path:
+# Looked up rather than branched on. mypy narrows `sys.platform` to the platform
+# it is running on, so an if/elif chain over it makes every other branch
+# provably unreachable - which `warn_unreachable` then reports as an error, on
+# macOS only. A dict has no control flow to narrow.
+def _per_platform(darwin: str, windows: str, other: str) -> Path:
     if sys.platform == "darwin":
-        return _home() / "Library/Application Support/Claude/claude_desktop_config.json"
-    if os.name == "nt":
-        return _appdata() / "Claude/claude_desktop_config.json"
-    return _home() / ".config/Claude/claude_desktop_config.json"
+        base, rel = _home(), darwin
+    elif os.name == "nt":
+        base, rel = _appdata(), windows
+    else:
+        base, rel = _home(), other
+    return base / rel
+
+
+def _claude_desktop() -> Path:
+    return _per_platform(
+        "Library/Application Support/Claude/claude_desktop_config.json",
+        "Claude/claude_desktop_config.json",
+        ".config/Claude/claude_desktop_config.json",
+    )
 
 
 def _vscode_user_dir() -> Path:
-    if sys.platform == "darwin":
-        return _home() / "Library/Application Support/Code/User"
-    if os.name == "nt":
-        return _appdata() / "Code/User"
-    return _home() / ".config/Code/User"
+    return _per_platform(
+        "Library/Application Support/Code/User",
+        "Code/User",
+        ".config/Code/User",
+    )
 
 
 @dataclass(frozen=True, slots=True)
