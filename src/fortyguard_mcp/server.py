@@ -35,8 +35,10 @@ from .client.results import (
 from .config import Settings
 from .domain.api_schema import (
     ANALYTIC_TYPE_HINT,
+    ENV_ANALYSIS_HINT,
     FILTER_TYPE_HINT,
     GRANULARITY_HINT,
+    REPORT_ANALYSIS_HINT,
     TIME_BASIS_NOTE,
 )
 from .domain.geo import (
@@ -72,6 +74,8 @@ Transport = Literal["stdio", "sse", "streamable-http"]
 _HINT_FILTER = "; ".join(f"{k} = {v}" for k, v in FILTER_TYPE_HINT.items())
 _HINT_GRAN = ", ".join(str(g) for g in GRANULARITY_HINT)
 _HINT_ANALYTIC = ", ".join(ANALYTIC_TYPE_HINT)
+_HINT_ENV_ANALYSIS = ", ".join(ENV_ANALYSIS_HINT)
+_HINT_REPORT_ANALYSIS = ", ".join(REPORT_ANALYSIS_HINT)
 
 
 # --------------------------------------------------------------------------- #
@@ -620,7 +624,8 @@ def build_server(tool_ctx: ToolContext | None = None) -> MCPServer:
             "match the heatmap for the same place and time. Supply it either as "
             "temperature=, or as from_activity_id= naming a completed heatmap "
             "covering this point, which also supplies the matching date. Give "
-            "one or the other, not both."
+            "one or the other, not both. Narrow the response with analysis=, "
+            "or omit it to receive every parameter."
         ),
         structured_output=False,
     )
@@ -640,6 +645,12 @@ def build_server(tool_ctx: ToolContext | None = None) -> MCPServer:
         start_time: Annotated[str | None, Field(default=None)] = None,
         filter_type: Annotated[int | None, Field(
             default=None, description=_HINT_FILTER)] = None,
+        analysis: Annotated[list[str] | None, Field(
+            default=None,
+            description=f"Which parameters to return. Omit for all of them "
+                        f"(verified). Values: {_HINT_ENV_ANALYSIS}. NOTE these "
+                        f"are NOT the sections submit_heat_intelligence takes "
+                        f"- that endpoint uses a different vocabulary.")] = None,
         wait_s: Annotated[float, Field(
             default=DEFAULT_INLINE_WAIT_S, ge=0)] = DEFAULT_INLINE_WAIT_S,
         ctx_: Context | None = None,
@@ -683,6 +694,7 @@ def build_server(tool_ctx: ToolContext | None = None) -> MCPServer:
             "longitude": longitude,
             "temperature": temp,
             "date_time": date_time,
+            "analysis": analysis,
         })
         out = await run_analysis(ctx, "/v1/env_params", body,
                                  mcp_ctx=ctx_, wait_s=wait_s)
@@ -709,8 +721,12 @@ def build_server(tool_ctx: ToolContext | None = None) -> MCPServer:
             default=None, description="HH:MM, local to the point, not UTC.")] = None,
         filter_type: Annotated[int | None, Field(
             default=None, description=_HINT_FILTER)] = None,
+        # OPTIONAL, measured: a call omitting it was accepted (HTTP 200). The
+        # vendor documentation lists it under Required attributes and is wrong,
+        # exactly as it is wrong for heatmap.
         granularity: Annotated[int | None, Field(
-            default=None, description=f"Tile edge in metres: {_HINT_GRAN}.")] = None,
+            default=None,
+            description=f"Tile edge in metres: {_HINT_GRAN}.")] = None,
     ) -> str:
         body = _prune({
             "sat": {"latitude": latitude, "longitude": longitude},
@@ -731,11 +747,16 @@ def build_server(tool_ctx: ToolContext | None = None) -> MCPServer:
     async def submit_streetview(
         latitude: Annotated[float, Field(description="Decimal degrees.")],
         longitude: Annotated[float, Field(description="Decimal degrees.")],
-        vertical_angle: Annotated[float | None, Field(default=None)] = None,
-        horizontal_angle: Annotated[float | None, Field(default=None)] = None,
-        back_view: Annotated[bool | None, Field(
-            default=None,
-            description="Also analyse the opposing view.")] = None,
+        # All three are Required attributes in the vendor's documentation, and
+        # a 422 names the angles when either is absent.
+        vertical_angle: Annotated[float, Field(
+            description="Camera pitch in degrees. 10 is a normal "
+                        "street-level view.")],
+        horizontal_angle: Annotated[float, Field(
+            description="Field of view in degrees, 0-360. 90 is a normal "
+                        "street-level view.")],
+        back_view: Annotated[bool, Field(
+            description="Also analyse the opposing direction.")],
     ) -> str:
         body = _prune({
             "latitude": latitude,
@@ -756,13 +777,22 @@ def build_server(tool_ctx: ToolContext | None = None) -> MCPServer:
             "downloads the PDF to local disk and returns its path under "
             "'report'; the API delivers this analysis as a short-lived signed "
             "URL, which is never returned or stored. Needs a temperature: give "
-            "temperature= or from_activity_id=, not both."
+            "temperature= or from_activity_id=, not both. `analysis` is "
+            "required - pass all five categories for a complete report."
         ),
         structured_output=False,
     )
     async def submit_heat_intelligence(
         latitude: Annotated[float, Field(description="Decimal degrees.")],
         longitude: Annotated[float, Field(description="Decimal degrees.")],
+        # Required by the API: a 422 names it when absent. Declared before the
+        # optional arguments because Python allows no default after a default.
+        analysis: Annotated[list[str], Field(
+            description=f"Report sections to include, at least one: "
+                        f"{_HINT_REPORT_ANALYSIS}. Pass all five for a "
+                        f"complete report. NOTE these are NOT the measurement "
+                        f"names get_env_params takes - that endpoint uses a "
+                        f"different vocabulary and does not require this.")],
         temperature: Annotated[float | None, Field(
             default=None, description="Degrees Celsius. Mutually exclusive with "
                                       "from_activity_id.")] = None,
@@ -772,10 +802,6 @@ def build_server(tool_ctx: ToolContext | None = None) -> MCPServer:
                         "Free. Mutually exclusive with temperature.")] = None,
         date: Annotated[str | None, Field(
             default=None, description="YYYY-MM-DD.")] = None,
-        analysis: Annotated[list[str] | None, Field(
-            default=None,
-            description="Categories to include: geographic, environmental, "
-                        "urban, events, anthropogenic. Omit for all.")] = None,
     ) -> str:
         try:
             temp, sourced_dt, provenance = resolve_temperature(

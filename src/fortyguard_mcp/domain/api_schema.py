@@ -179,6 +179,26 @@ ANALYTIC_TYPE_HINT: Final[tuple[str, ...]] = (
     "tcm", "time_of_measure", "exceedance", "persistence",
 )
 
+# `analysis` on /v1/env_params. Measurement names, and OPTIONAL - a call
+# omitting it returns all of them, verified twice.
+ENV_ANALYSIS_HINT: Final[tuple[str, ...]] = (
+    "heat_index_celsius", "apparent_temperature_celsius",
+    "wet_bulb_temperature_celsius", "relative_humidity_percent",
+    "precipitation_mm", "cloud_cover_octas", "elevation", "solar_irradiance",
+    "air_quality:idx", "air_quality_pm2p5:idx", "air_quality_pm10:idx",
+    "air_quality_no2:idx", "air_quality_o3:idx", "air_quality_so2:idx",
+    "aqi_us_co", "methane_ppb", "co2_ppm",
+)
+
+# `analysis` on /v1/heat_intelligence. Report sections, and REQUIRED - the API
+# returns 422 when it is absent.
+#
+# THE SAME FIELD NAME ON BOTH ENDPOINTS, with different vocabularies and
+# opposite optionality. Passing one endpoint's values to the other is a 422.
+REPORT_ANALYSIS_HINT: Final[tuple[str, ...]] = (
+    "geographic", "environmental", "urban", "events", "anthropogenic",
+)
+
 # Undocumented, and easy to get wrong: a UTC-built timestamp lands hours off.
 TIME_BASIS_NOTE: Final[str] = (
     "start_time is interpreted as local time at the area of interest, not UTC."

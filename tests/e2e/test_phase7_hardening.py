@@ -273,7 +273,10 @@ async def test_every_tool_survives_a_faulting_upstream(
         ("split_aoi", {"polygon_aoi": fc, "max_area_km2": 50.0}),
         ("check_status", {"activity_id": "does-not-exist"}),
         ("get_result_slice", {"activity_id": "does-not-exist"}),
-        ("submit_streetview", {"latitude": 33.4, "longitude": -112.0}),
+        ("submit_streetview", {"latitude": 33.4, "longitude": -112.0,
+                               "vertical_angle": 10.0,
+                               "horizontal_angle": 90.0,
+                               "back_view": False}),
     ]
     for name, args in calls:
         result = await mcp.call_tool(name, args)

@@ -406,3 +406,133 @@ async def test_m2_a_healthy_archive_still_reports_success(tmp_path):
     assert out["archived"] is True
     assert "archive_error" not in out
     await ctx.aclose()
+
+
+# --------------------------------------------------------------------------- #
+# Schema fidelity - a parameter the API requires must not be optional here
+# --------------------------------------------------------------------------- #
+
+def test_streetview_angles_are_required_in_the_schema():
+    """
+    The API returns 422 "Field 'vertical_angle' is required" when either angle
+    is absent, so declaring them optional made the default call impossible:
+    `_prune` dropped the Nones and the request could only ever fail.
+
+    Both recorded fixtures happened to supply them, so no replay test could
+    catch it - it took a live call from an agent.
+    """
+    from fortyguard_mcp.server import build_server
+    from fortyguard_mcp.tools.runtime import ToolContext
+
+    server = build_server(ToolContext(settings=_settings_for_schema()))
+    tools = server._tool_manager.list_tools()
+    sv = next(t for t in tools if t.name == "submit_streetview")
+    required = set((sv.parameters or {}).get("required", []))
+
+    # The live 422 named only the two angles, because back_view happened to be
+    # supplied on that call. The vendor documentation lists all five under
+    # Required attributes, and every recorded fixture carries all five.
+    assert required == {"latitude", "longitude", "vertical_angle",
+                        "horizontal_angle", "back_view"}
+
+
+def test_heat_intelligence_analysis_is_required_in_the_schema():
+    """
+    The API returns 422 "Field 'analysis' is required" when it is absent, but
+    the tool description said "Omit for all" - so following the documentation
+    produced a request that could not succeed.
+
+    Same shape as the streetview angles: the single recorded fixture supplied
+    it, so the omit-case was never exercised by any replay test.
+    """
+    from fortyguard_mcp.server import build_server
+    from fortyguard_mcp.tools.runtime import ToolContext
+
+    server = build_server(ToolContext(settings=_settings_for_schema()))
+    tools = server._tool_manager.list_tools()
+    hi = next(t for t in tools if t.name == "submit_heat_intelligence")
+    assert "analysis" in set((hi.parameters or {}).get("required", []))
+    # And the description must not still promise the opposite.
+    assert "Omit for all" not in (hi.description or "")
+
+
+def test_every_field_the_api_always_receives_is_still_sent(tmp_path):
+    """
+    Guards the shape of the bug rather than the one instance: for the two
+    endpoints whose recorded requests always carry a field, that field must
+    survive `_prune` when the caller supplies it.
+    """
+    from fortyguard_mcp.server import _prune
+
+    body = _prune({
+        "latitude": 33.4484, "longitude": -112.074,
+        "vertical_angle": 10.0, "horizontal_angle": 90.0, "back_view": False,
+    })
+    assert set(body) == {"latitude", "longitude", "vertical_angle",
+                         "horizontal_angle", "back_view"}
+    # False and 0.0 are meaningful values, not absences.
+    assert body["back_view"] is False
+
+
+def _settings_for_schema():
+    import tempfile
+    return Settings(api_key="k" * 32, data_dir=tempfile.mkdtemp())
+
+
+def test_satellite_granularity_stays_optional():
+    """
+    Measured live: a satellite call omitting `granularity` was ACCEPTED (200).
+
+    The vendor documentation lists it under Required attributes and is wrong -
+    the same way it is wrong for heatmap, where `e_missing_granularity` also
+    returned 200. Requiring it here would force every caller to choose a value
+    the API is content to pick itself.
+    """
+    from fortyguard_mcp.server import build_server
+    from fortyguard_mcp.tools.runtime import ToolContext
+
+    server = build_server(ToolContext(settings=_settings_for_schema()))
+    tools = server._tool_manager.list_tools()
+    sat = next(t for t in tools if t.name == "submit_satellite")
+    assert "granularity" not in set((sat.parameters or {}).get("required", []))
+
+
+def test_env_params_exposes_analysis_and_it_is_optional():
+    """
+    Measured: env_params calls omitting `analysis` returned 200 twice, so it is
+    optional - but it was not exposed at all, so a caller could never narrow
+    the response and always paid for all 15 parameters.
+    """
+    from fortyguard_mcp.server import build_server
+    from fortyguard_mcp.tools.runtime import ToolContext
+
+    server = build_server(ToolContext(settings=_settings_for_schema()))
+    tools = server._tool_manager.list_tools()
+    ep = next(t for t in tools if t.name == "get_env_params")
+    props = (ep.parameters or {}).get("properties", {})
+    assert "analysis" in props
+    assert "analysis" not in set((ep.parameters or {}).get("required", []))
+
+
+def test_the_two_analysis_vocabularies_are_kept_apart():
+    """
+    `analysis` means different things on the two endpoints that take it, with
+    opposite optionality. Each description must warn about the other, or a
+    caller will send report sections to env_params and get a 422.
+    """
+    from fortyguard_mcp.domain.api_schema import (
+        ENV_ANALYSIS_HINT,
+        REPORT_ANALYSIS_HINT,
+    )
+    from fortyguard_mcp.server import build_server
+    from fortyguard_mcp.tools.runtime import ToolContext
+
+    assert not set(ENV_ANALYSIS_HINT) & set(REPORT_ANALYSIS_HINT)
+
+    server = build_server(ToolContext(settings=_settings_for_schema()))
+    tools = server._tool_manager.list_tools()
+    by_name = {t.name: t for t in tools}
+    env = by_name["get_env_params"].parameters["properties"]["analysis"]
+    rep = by_name["submit_heat_intelligence"].parameters["properties"]["analysis"]
+    assert "submit_heat_intelligence" in env["description"]
+    assert "get_env_params" in rep["description"]

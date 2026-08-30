@@ -5,7 +5,51 @@ All notable changes to this project are documented here.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.1.0] — unreleased
+## [0.1.1] — unreleased
+
+### Fixed
+
+Parameters the API requires were declared optional, so the documented call could
+not succeed. These were found by an agent making live calls, not by the test
+suite — each endpoint's recorded fixtures happened to supply the field, so no
+replay could exercise the omit-case.
+
+- **`submit_streetview`** — `vertical_angle`, `horizontal_angle` and `back_view`
+  are all required. The angles were optional and `_prune` dropped them, so a
+  call with just a coordinate returned
+  `422 Field 'vertical_angle' is required`.
+- **`submit_heat_intelligence`** — `analysis` is required. The tool description
+  said "Omit for all", so following the documentation produced a 422.
+
+They are now required in the schema, so the SDK rejects an incomplete call
+before it reaches the API rather than after a round trip. Regression tests pin
+the required set for each, and assert the corrected description no longer
+promises the old behaviour.
+
+Rejections are free, so neither defect cost credits to hit.
+
+### Changed
+
+- **`get_env_params` accepts `analysis`.** The API takes an optional list of 17
+  parameter names; the tool never exposed it, so a caller could not narrow the
+  response and always received all of them. Omitting it still returns
+  everything, which is measured, not assumed.
+- **The two `analysis` fields are documented apart.** `get_env_params` takes
+  measurement names and is optional; `submit_heat_intelligence` takes report
+  sections and is required. Same field name, disjoint vocabularies, opposite
+  optionality — each description now names the other endpoint, and a test
+  asserts the vocabularies do not overlap.
+
+### Verified
+
+- **`submit_satellite.granularity` stays optional.** The vendor documentation
+  lists it under Required attributes for both `/v1/satellite` and
+  `/v1/heatmap`, and is wrong about both: a call omitting it was accepted
+  (HTTP 200) on each. It was briefly made required here on the strength of that
+  documentation; a live probe costing 14,400 credits reversed the change before
+  it shipped. A test now pins it optional.
+
+## [0.1.0] — 2026-08-29
 
 First public release.
 
@@ -72,9 +116,6 @@ test in `tests/unit/test_security_audit.py`.
 - **`--transport`** for `sse` and `streamable-http`, with a warning: this server
   has no authentication or per-caller isolation, so stdio remains the supported
   transport.
-
-### Added
-
 - **12 MCP tools** over FortyGuard's five analysis endpoints, plus geometry and
   account helpers: `create_heatmap`, `submit_heatmap`, `get_env_params`,
   `submit_satellite`, `submit_streetview`, `submit_heat_intelligence`,
@@ -103,8 +144,8 @@ test in `tests/unit/test_security_audit.py`.
 - **Structured stderr logging** with the API key and signed URLs redacted at the
   handler, including third-party loggers and exception text. Never stdout, which
   under stdio is the JSON-RPC channel.
-- **An offline test suite**: 478 tests against a replay server built from 50
-  recorded API exchanges. No API key, no credits, no network.
+- **An offline test suite** against a replay server built from 50 recorded API
+  exchanges. No API key, no credits, no network.
 
 ### Design notes
 

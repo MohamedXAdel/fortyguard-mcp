@@ -557,7 +557,7 @@ If you need it, bind to loopback behind an authenticating reverse proxy.
 
 ```bash
 pip install -e ".[dev]"
-pytest                          # 534 tests, fully offline — no API key, no credits
+pytest                          # 540 tests, fully offline — no API key, no credits
 ruff check .
 mypy src
 ```
